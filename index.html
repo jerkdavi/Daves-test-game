@@ -46,7 +46,7 @@
 <body>
 	<div style="float:none;border:1px solid white;width:616px;height:666px;">
 		<p id="output" style="float:left;border:1px solid white;width:306px;text-align:center;"></p>
-		<p id="output" style="float:left;border:1px solid white;width:306px;text-align:center;">MAP</p>
+		<p style="float:left;border:1px solid white;width:306px;text-align:center;">MAP</p>
 		<div style="float:left;border:1px solid white;width:306px;height:306px;">
 			<image id="image1" src="" style="border:1px solid white;width:304px;height:304px;"></image>
 		</div>
@@ -289,8 +289,13 @@
 			function render()
 			{
 				//Render the location
-
+				
+				//Display the location - text
 				//output.innerHTML = map[mapLocation];
+				
+				//Updates paragraph id - output with - output variable
+				document.getElementById('output').innerText = map[mapLocation]
+				
 				image1.src = "New_maps/" + images1[mapLocation];
 
 				//image2.src = "images/" + images2[mapLocation];
