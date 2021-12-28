@@ -2,303 +2,356 @@
 <html>
 <head>
 	<title>Daves test game</title>
+	<style media="all">
+		body
+		{
+			margin:0px;
+			padding:0px;
+			max-width:1000px;
+			color:black;
+			font-family:"Times New Roman";
+			font-size:16px;
+			text-align:left;
+		}
+		p
+		{
+			margin:0px;
+			padding:0px;
+			font-size:16px;
+		} 
+		span
+		{
+			margin:0px;
+			padding:0px;
+			font-size:16px;
+		}
+		table{
+			width:100%;
+			margin:0px;
+			padding:0px;
+		}
+		tr
+		{
+			margin:0px;
+			padding:0px;
+		}
+		td
+		{
+			margin:0px;
+			padding:0px;
+		}
+		<!--<link rel="stylesheet" href="Template_Notification_CSS_halmed_glpi_simple_update3.css">-->
+</style>
 </head>
 <body>
-	<div style="float:none;border:0px solid black;width:602px;height:602px;">
-		<div style="float:left;border:0px solid black;width:300px;height:300px;">
-			<image id="image1" src="" width="300" height="300"></image>
+	<div style="float:none;border:1px solid white;width:616px;height:666px;">
+		<p id="output" style="float:left;border:1px solid white;width:306px;text-align:center;"></p>
+		<p id="output" style="float:left;border:1px solid white;width:306px;text-align:center;">MAP</p>
+		<div style="float:left;border:1px solid white;width:306px;height:306px;">
+			<image id="image1" src="" style="border:1px solid white;width:304px;height:304px;"></image>
 		</div>
-		<div style="float:left;border:0px solid black;width:302px;height:302px;">
-			<image id="image001" src="" width="100" height="100" style="float:left;"></image>
-			<image id="image002" src="" width="100" height="100" style="float:left;"></image>
-			<image id="image003" src="" width="100" height="100" style="float:left;"></image>
-			<image id="image004" src="" width="100" height="100" style="float:left;"></image>
-			<image id="image005" src="" width="100" height="100" style="float:left;"></image>
-			<image id="image006" src="" width="100" height="100" style="float:left;"></image>
-			<image id="image007" src="" width="100" height="100" style="float:left;"></image>
-			<image id="image008" src="" width="100" height="100" style="float:left;"></image>
-			<image id="image009" src="" width="100" height="100" style="float:left;"></image>
+		<div style="float:left;border:1px solid white;width:306px;height:306px;">
+			<image id="image001" src="" style="border:1px solid gray;float:left;width:100px;height:100px;"></image>
+			<image id="image002" src="" style="border:1px solid gray;float:left;width:100px;height:100px;"></image>
+			<image id="image003" src="" style="border:1px solid gray;float:left;width:100px;height:100px;"></image>
+			<image id="image004" src="" style="border:1px solid gray;float:left;width:100px;height:100px;"></image>
+			<image id="image005" src="" style="border:1px solid gray;float:left;width:100px;height:100px;"></image>
+			<image id="image006" src="" style="border:1px solid gray;float:left;width:100px;height:100px;"></image>
+			<image id="image007" src="" style="border:1px solid gray;float:left;width:100px;height:100px;"></image>
+			<image id="image008" src="" style="border:1px solid gray;float:left;width:100px;height:100px;"></image>
+			<image id="image009" src="" style="border:1px solid gray;float:left;width:100px;height:100px;"></image>
 		</div>
-		<div style="float:left;border:0px solid black;width:300px;height:300px;">
-			<p id="output"></p>
-			<input id="input" type="text" placeholder="Enter your action...">
-			<button>Enter</button>
+		<div style="float:left;border:1px solid white;width:306px;height:306px;">
+			<p id="game message" style="border:1px solid white;width:304px;height:304px;word-wrap:break-word;"></p>
 		</div>
-		<div style="float:left;border:0px solid black;width:300px;height:300px;">
-			<image id="image3" src="" width="300" height="300"></image>
+		<div style="float:left;border:1px solid white;width:306px;height:306px;">
+			<image id="image3" src="" style="border:1px solid white;width:304px;height:304px;"></image>
 		</div>
+			<input id="input" type="text" placeholder="Enter your action..." style="border:1px solid gray;width:302px;height:25px;">
+			<button style="border:1px solid gray;width:50px;height:25px;">Enter</button>
 	</div>
 	<script>
-	//Create the map
-	var map = [];
-	map[0] = "001";
-	map[1] = "002";
-	map[2] = "003";
-	map[3] = "004";
-	map[4] = "005";
-	map[5] = "006";
-	map[6] = "007";
-	map[7] = "008";
-	map[8] = "009";
-	
-	//Create the images
-	var images1 = [];
-	images1[0] = "room001.png";
-	images1[1] = "room002.png";
-	images1[2] = "room003.png";
-	images1[3] = "room004.png";
-	images1[4] = "room005.png";
-	images1[5] = "room006.png";
-	images1[6] = "room007.png";
-	images1[7] = "room008.png";
-	images1[8] = "room009.png";
-	
-	var images2 = [];
-	images2[0] = "no";
-	images2[1] = "no";
-	images2[2] = "no";
-	images2[3] = "no";
-	images2[4] = "yes"
-	images2[5] = "no";
-	images2[6] = "no";
-	images2[7] = "no";
-	images2[8] = "no";
-	
-	
-	//Set the player's start location
-	var mapLocation = 4;
-	
-	//Initialize the player's input
-	var playersInput = "";
-	
-	//Initialize the gameMessage
-	gameMessage = "Where do you want to go?";
-	
-	//Create an array of actions the game understands
-	//and a variable to store the current action
-	var actionsIKnow = ["north", "east", "south", "west", " "];
-	var action = "";
-	
-	//The input and output fields
-	var output = document.querySelector("#output");
-	var input = document.querySelector("#input");
-	
-	//The images
-	var image1 = document.querySelector("#image1");
-	var image2 = document.querySelector("#image2");
-	
-	//The button
-	var button = document.querySelector("button");
-	button.style.cursor = "pointer";
-	button.addEventListener("click", clickHandler, false);
-	
-	input.addEventListener("keyup", function(event) {
-		if (event.keyCode === 13) {
-			clickHandler()
-		}
-	}); 
-	
-	//Display the player's location
-	render();
-	
-	function clickHandler()
-	{
-		playGame();
-	}
-	function playGame()
-	{
-		//Get the player's input and convert it to lowercase
-		playersInput = input.value;
-		playersInput = playersInput.toLowerCase();
-		playersInput = playersInput.trim();
-		if (playersInput == "")
+		localStorage.clear();
+		start();
+		function start()
 		{
-			playersInput = " ";
-		}
-		
-		//Reset these variables from the previous turn
-		gameMessage = "";
-		action = "";
-		
-		//Figure out the players' action
-		for(var i = 0; i < actionsIKnow.length; i++)
-		{
-			//console.log(playersInput + " === " + actionsIKnow[i]);
-			if(playersInput === actionsIKnow[i])
+			//Create the map
+			var map = [];
+			map[0] = "Room 001";
+			map[1] = "Room 002";
+			map[2] = "Room 003";
+			map[3] = "Room 004";
+			map[4] = "Room 005";
+			map[5] = "Room 006";
+			map[6] = "Room 007";
+			map[7] = "Room 008";
+			map[8] = "Room 009";
+			//Create the images
+			var images1 = [];
+			images1[0] = "room001.png";
+			images1[1] = "room002.png";
+			images1[2] = "room003.png";
+			images1[3] = "room004.png";
+			images1[4] = "room005.png";
+			images1[5] = "room006.png";
+			images1[6] = "room007.png";
+			images1[7] = "room008.png";
+			images1[8] = "room009.png";
+			var images2 = [];
+			images2[0] = "no";
+			images2[1] = "no";
+			images2[2] = "no";
+			images2[3] = "no";
+			images2[4] = "yes"
+			images2[5] = "no";
+			images2[6] = "no";
+			images2[7] = "no";
+			images2[8] = "no";
+			//Set the player's start location
+			var mapLocation = 4;
+			//Initialize the player's input
+			var playersInput = "";
+			//Initialize the gameMessage
+			gameMessage = "Where do you want to go?\n\nType help for help!";
+			//Create an array of actions the game understands
+			//and a variable to store the current action
+			var actionsIKnow = [" ", "help", "diary", "clrdiary", "reset", "north", "south", "east", "west"];
+			var action = "";
+			//The input and output fields
+			var output = document.querySelector("#output");
+			var input = document.querySelector("#input");
+			//The images
+			var image1 = document.querySelector("#image1");
+			var image2 = document.querySelector("#image2");
+			//The button
+			var button = document.querySelector("button");
+			button.style.cursor = "pointer";
+			button.addEventListener("click", clickHandler, false);
+			input.addEventListener("keyup", function(event) {
+				if (event.keyCode === 13) {
+					clickHandler()
+				}
+			}); 
+			//Display the player's location
+			render();
+			function clickHandler()
 			{
-				action = actionsIKnow[i];
-				gameMessage = "You went " + action;
-				break;
+				playGame();
+			}
+			function playGame()
+			{
+				//Get the player's input and convert it to lowercase
+				playersInput = input.value;
+				playersInput = playersInput.toLowerCase();
+				playersInput = playersInput.trim();
+				console.log(playersInput);
+				var aNumber = !!localStorage.getItem('number') ? JSON.parse(localStorage.getItem('number')) : [];
+				number = document.getElementById('input').value;
+				aNumber.push(number);
+				localStorage.setItem('number', JSON.stringify(aNumber));
+				//Reset these variables from the previous turn
+				gameMessage = "";
+				action = "";
+				//Figure out the players' action
+				for(var i = 0; i < actionsIKnow.length; i++)
+				{
+					if(playersInput === actionsIKnow[i])
+					{
+						action = actionsIKnow[i];
+						gameMessage = "You went " + action;
+						break;
+					}
+				}
+				//Choose the correct action
+				switch(action)
+				{
+					case " ":
+					{
+						gameMessage = "Where do you want to go?\n\nType help for help!";
+						break;
+					}
+					case "help":
+						gameMessage = "Here is a list of commands you can try:\n\nhelp - returns all available commands\ndiary - returns all commands you tried\nclrdiary - clears all entries from diary\nreset - restarts the game\n\nnorth - tries to go north\nsouth - tries to go south\neast - tries to go east\nwest - tries to go west\n"
+						break;
+					case "diary":
+					{
+						gameMessage = localStorage.getItem('number');
+						break;
+					}
+					case "clrdiary":
+					{
+						localStorage.removeItem('number');
+						gameMessage = "Diary cleared"
+						break;
+					}
+					case "reset":
+					{
+						localStorage.clear();
+						location.reload();
+						break;
+					}
+					case "north":
+						if(mapLocation >= 3)
+						{
+							mapLocation -= 3;
+						}
+						else
+						{
+							gameMessage = "You can't go north from here!";
+						}
+						break;
+					case "south":
+						if(mapLocation <= 5)
+						{
+							mapLocation += 3;
+						}
+						else
+						{
+							gameMessage = "You can't go south from here!";
+						}
+						break;
+					case "east":
+						if(mapLocation % 3 != 2)
+						{
+							mapLocation += 1;
+						}
+						else
+						{
+							gameMessage = "You can't go east from here!";
+						}
+						break;
+					case "west":
+						if(mapLocation % 3 != 0)
+						{
+							mapLocation -= 1;
+						}
+						else
+						{
+							gameMessage = "You can't go west from here!";
+						}
+						break;
+					default:
+					{
+						gameMessage = "I don't understand that!\n\nType help for help!";
+					}
+				}
+				if(mapLocation === 0)
+				{
+					images2[0] = "yes";
+				}
+				if(mapLocation === 1)
+					{
+					images2[1] = "yes";
+				}
+				if(mapLocation === 2)
+				{
+					images2[2] = "yes";
+				}
+				if(mapLocation === 3)
+				{
+					images2[3] = "yes";
+				}
+				if(mapLocation === 5)
+				{
+					images2[5] = "yes";
+				}
+				if(mapLocation === 6)
+				{
+					images2[6] = "yes";
+				}
+				if(mapLocation === 7)
+				{
+					images2[7] = "yes";
+				}
+				if(mapLocation === 8)
+				{
+					images2[8] = "yes";
+				}
+				document.getElementById("input").value = "";
+				//Render the game
+				render();
+			}
+			function restart()
+			{
+				exit;
+			}
+			function render()
+			{
+				//Render the location
+				output.innerHTML = map[mapLocation];
+				image1.src = "New_maps/" + images1[mapLocation];
+				//image2.src = "images/" + images2[mapLocation];
+				image3.src = "New_maps/compass001.png";
+				if(images2[0] === "no")
+				{
+					image001.src = "New_maps/empty.png";
+				}
+				if(images2[0] === "yes")
+				{
+					image001.src = "New_maps/001.png";
+				}
+				if(images2[1] === "no")
+				{
+					image002.src = "New_maps/empty.png";
+				}
+				if(images2[1] === "yes")
+				{
+					image002.src = "New_maps/002.png";
+				}
+				if(images2[2] === "no")
+				{
+					image003.src = "New_maps/empty.png";
+				}
+				if(images2[2] === "yes")
+				{
+					image003.src = "New_maps/003.png";
+				}
+				if(images2[3] === "no")
+				{
+					image004.src = "New_maps/empty.png";
+				}
+				if(images2[3] === "yes")
+				{
+					image004.src = "New_maps/004.png";
+				}
+				image005.src = "New_maps/005.png";
+				if(images2[5] === "no")
+				{
+					image006.src = "New_maps/empty.png";
+				}
+				if(images2[5] === "yes")
+				{
+					image006.src = "New_maps/006.png";
+				}
+				if(images2[6] === "no")
+				{
+					image007.src = "New_maps/empty.png";
+				}
+				if(images2[6] === "yes")
+				{
+					image007.src = "New_maps/007.png";
+				}
+				if(images2[7] === "no")
+				{
+					image008.src = "New_maps/empty.png";
+				}
+				if(images2[7] === "yes")
+				{
+					image008.src = "New_maps/008.png";
+				}
+				if(images2[8] === "no")
+				{
+					image009.src = "New_maps/empty.png";
+				}
+				if(images2[8] === "yes")
+				{
+					image009.src = "New_maps/009.png";
+				}
+				//Display the game message
+				//output.innerHTML += "<br><em>" + gameMessage + "</em>";
+				document.getElementById('game message').innerText = gameMessage
 			}
 		}
-		
-		//Choose the correct action
-		switch(action)
-		{
-			case "north":
-				if(mapLocation >= 3)
-				{
-					mapLocation -= 3;
-				}
-				else
-				{
-					gameMessage = "You can't go north from here!";
-				}
-				break;
-			case "south":
-				if(mapLocation <= 5)
-				{
-					mapLocation += 3;
-				}
-				else
-				{
-					gameMessage = "You can't go south from here!";
-				}
-				break;
-			case "east":
-				if(mapLocation % 3 != 2)
-				{
-					mapLocation += 1;
-				}
-				else
-				{
-					gameMessage = "You can't go east from here!";
-				}
-				break;
-			case "west":
-				if(mapLocation % 3 != 0)
-				{
-					mapLocation -= 1;
-				}
-				else
-				{
-					gameMessage = "You can't go west from here!";
-				}
-				break;
-			case " ":
-			{
-				gameMessage = "Where do you want to go?";
-				break;
-			}
-			default:
-			{
-				gameMessage = "I don't understand that.";
-			}
-		}
-		
-		if(mapLocation === 0)
-		{
-			images2[0] = "yes";
-		}
-		if(mapLocation === 1)
-			{
-			images2[1] = "yes";
-		}
-		if(mapLocation === 2)
-		{
-			images2[2] = "yes";
-		}
-		if(mapLocation === 3)
-		{
-			images2[3] = "yes";
-		}
-		if(mapLocation === 5)
-		{
-			images2[5] = "yes";
-		}
-		if(mapLocation === 6)
-		{
-			images2[6] = "yes";
-		}
-		if(mapLocation === 7)
-		{
-			images2[7] = "yes";
-		}
-		if(mapLocation === 8)
-		{
-			images2[8] = "yes";
-		}
-		//Render the game
-		render();
-	}
-	
-	function render()
-	{
-		//Render the location
-		output.innerHTML = map[mapLocation];
-		image1.src = "New_maps/" + images1[mapLocation];
-		//image2.src = "images/" + images2[mapLocation];
-		image3.src = "New_maps/compass001.png";
-		if(images2[0] === "no")
-		{
-			image001.src = "New_maps/empty.png";
-		}
-		if(images2[0] === "yes")
-		{
-			image001.src = "New_maps/001.png";
-		}
-		if(images2[1] === "no")
-		{
-			image002.src = "New_maps/empty.png";
-		}
-		if(images2[1] === "yes")
-		{
-			image002.src = "New_maps/002.png";
-		}
-		if(images2[2] === "no")
-		{
-			image003.src = "New_maps/empty.png";
-		}
-		if(images2[2] === "yes")
-		{
-			image003.src = "New_maps/003.png";
-		}
-		if(images2[3] === "no")
-		{
-			image004.src = "New_maps/empty.png";
-		}
-		if(images2[3] === "yes")
-		{
-			image004.src = "New_maps/004.png";
-		}
-		image005.src = "New_maps/005.png";
-		if(images2[5] === "no")
-		{
-			image006.src = "New_maps/empty.png";
-		}
-		if(images2[5] === "yes")
-		{
-			image006.src = "New_maps/006.png";
-		}
-		if(images2[6] === "no")
-		{
-			image007.src = "New_maps/empty.png";
-		}
-		if(images2[6] === "yes")
-		{
-			image007.src = "New_maps/007.png";
-		}
-		if(images2[7] === "no")
-		{
-			image008.src = "New_maps/empty.png";
-		}
-		if(images2[7] === "yes")
-		{
-			image008.src = "New_maps/008.png";
-		}
-		if(images2[8] === "no")
-		{
-			image009.src = "New_maps/empty.png";
-		}
-		if(images2[8] === "yes")
-		{
-			image009.src = "New_maps/009.png";
-		}
-		
-		//Display the game message
-		output.innerHTML += "<br><em>" + gameMessage + "</em>";
-	}
-	
 	</script>
 </body>
 </html>
