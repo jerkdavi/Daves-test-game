@@ -144,6 +144,10 @@
 				playersInput = input.value;
 				playersInput = playersInput.toLowerCase();
 				playersInput = playersInput.trim();
+				if(playersInput.length === 0)
+				{
+						playersInput = " "
+				}
 				console.log(playersInput);
 				var aNumber = !!localStorage.getItem('number') ? JSON.parse(localStorage.getItem('number')) : [];
 				number = document.getElementById('input').value;
@@ -186,7 +190,6 @@
 					}
 					case "reset":
 					{
-						localStorage.clear();
 						location.reload();
 						break;
 					}
@@ -350,6 +353,8 @@
 				//Display the game message
 				//output.innerHTML += "<br><em>" + gameMessage + "</em>";
 				document.getElementById('game message').innerText = gameMessage
+				input.focus();
+				input.setSelectionRange(0, 0);
 			}
 		}
 	</script>
