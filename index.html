@@ -13,6 +13,15 @@
 			font-size:16px;
 			text-align:left;
 		}
+		h1
+		{
+			margin:250px 0 0 0;
+			padding:0px;
+			color:green;
+			font-family:"Times New Roman";
+			font-size:30px;
+			text-align:center;
+		}
 		p
 		{
 			margin:0px;
@@ -40,11 +49,45 @@
 			margin:0px;
 			padding:0px;
 		}
+		#overlay1 {
+		  border:1px solid white;
+		  position: fixed;
+		  display: block;
+		  width:618px;
+		  height:837px;
+		  top: 0;
+		  left: 0;
+		  right: 0;
+		  bottom: 0;
+		  background-color: rgba(0,0,0,0.8);
+		  z-index: 2;
+		  /* cursor: pointer; */
+		}
+		#overlay2 {
+		  border:1px solid white;
+		  position: fixed;
+		  display: none;
+		  width:618px;
+		  height:837px;
+		  top: 0;
+		  left: 0;
+		  right: 0;
+		  bottom: 0;
+		  background-color: rgba(0,0,0,0.8);
+		  z-index: 2;
+		  /* cursor: pointer; */
+		}
 		<!--<link rel="stylesheet" href="Template_Notification_CSS_halmed_glpi_simple_update3.css">-->
 </style>
 </head>
 <body>
-	<div style="float:none;border:1px solid white;width:616px;height:666px;">
+	<div id="overlay1"><h1>Are you ready to start the game?<br><br>Press TAB to start the game!</h1></div>
+	<div id="overlay2">
+		<h1>Congratulation on completing the game!<br><br>Do you want to play again?</h1>
+		<button id="button2" style="margin:100px 0 0 200px;border:1px solid gray;width:50px;height:25px;">Yes</button>
+		<button id="button3" style="margin:0 0 0 100px;border:1px solid gray;width:50px;height:25px;">No</button>
+	</div>
+	<div id="main" style="float:none;border:1px solid black;width:616px;height:835px;">
 		<p id="output" style="float:left;border:1px solid white;width:306px;text-align:center;"></p>
 		<p style="float:left;border:1px solid white;width:306px;text-align:center;">MAP</p>
 		<div style="float:left;border:1px solid white;width:306px;height:306px;">
@@ -61,58 +104,107 @@
 			<image id="image008" src="" style="border:1px solid gray;float:left;width:100px;height:100px;"></image>
 			<image id="image009" src="" style="border:1px solid gray;float:left;width:100px;height:100px;"></image>
 		</div>
-		<div style="float:left;border:1px solid white;width:306px;height:306px;">
+		<div style="float:left;border:1px solid white;width:306px;height:406px;">
 			<p id="game message" style="border:1px solid white;width:304px;height:304px;word-wrap:break-word;"></p>
 		</div>
-		<div style="float:left;border:1px solid white;width:306px;height:306px;">
+		<div style="float:left;border:1px solid white;width:306px;height:406px;">
 			<image id="image3" src="" style="border:1px solid white;width:304px;height:304px;"></image>
 		</div>
+		<div style="float:left;border:1px solid white;width:614px;height:50px;">
 			<input id="input" type="text" placeholder="Enter your action..." style="border:1px solid gray;width:302px;height:25px;">
-			<button style="border:1px solid gray;width:50px;height:25px;">Enter</button>
+			<button id="button1" style="border:1px solid gray;width:50px;height:25px;">Enter</button>
+		</div>
+		<p style="float:left;border:1px solid white;width:614px;text-align:center;">PROGRESS BAR</p>
+		<div style="float:left;border:1px solid black;width:612px;height:25px;">
+			<div id="div1" style="float:left;border:1px solid white;background-color:red;width:66px;height:23px;"></div>
+			<div id="div2" style="float:left;border:1px solid white;background-color:red;width:66px;height:23px;"></div>
+			<div id="div3" style="float:left;border:1px solid white;background-color:red;width:66px;height:23px;"></div>
+			<div id="div4" style="float:left;border:1px solid white;background-color:red;width:66px;height:23px;"></div>
+			<div id="div5" style="float:left;border:1px solid white;background-color:red;width:66px;height:23px;"></div>
+			<div id="div6" style="float:left;border:1px solid white;background-color:red;width:66px;height:23px;"></div>
+			<div id="div7" style="float:left;border:1px solid white;background-color:red;width:66px;height:23px;"></div>
+			<div id="div8" style="float:left;border:1px solid white;background-color:red;width:66px;height:23px;"></div>
+			<div id="div9" style="float:left;border:1px solid white;background-color:red;width:66px;height:23px;"></div>
+		</div>
 	</div>
+
 	<script>
 		//Clears all localStorage
 		localStorage.clear();
 		
 		//Calls function start
 		start();
-		
 		function start()
 		{
 			//Create the map
-			var map = [];
-			map[0] = "Room 001";
-			map[1] = "Room 002";
-			map[2] = "Room 003";
-			map[3] = "Room 004";
-			map[4] = "Room 005";
-			map[5] = "Room 006";
-			map[6] = "Room 007";
-			map[7] = "Room 008";
-			map[8] = "Room 009";
+			var maps1 = [];
+			maps1[0] = "Room1";
+			maps1[1] = "Room2";
+			maps1[2] = "Room3";
+			maps1[3] = "Room4";
+			maps1[4] = "Room5";
+			maps1[5] = "Room6";
+			maps1[6] = "Room7";
+			maps1[7] = "Room8";
+			maps1[8] = "Room9";
 			
 			//Create the images
 			var images1 = [];
-			images1[0] = "room001.png";
-			images1[1] = "room002.png";
-			images1[2] = "room003.png";
-			images1[3] = "room004.png";
-			images1[4] = "room005.png";
-			images1[5] = "room006.png";
-			images1[6] = "room007.png";
-			images1[7] = "room008.png";
-			images1[8] = "room009.png";
+			images1[0] = "New_maps/room001.png";
+			images1[1] = "New_maps/room002.png";
+			images1[2] = "New_maps/room003.png";
+			images1[3] = "New_maps/room004.png";
+			images1[4] = "New_maps/room005.png";
+			images1[5] = "New_maps/room006.png";
+			images1[6] = "New_maps/room007.png";
+			images1[7] = "New_maps/room008.png";
+			images1[8] = "New_maps/room009.png";
 			
 			var images2 = [];
-			images2[0] = "no";
-			images2[1] = "no";
-			images2[2] = "no";
-			images2[3] = "no";
-			images2[4] = "yes"
-			images2[5] = "no";
-			images2[6] = "no";
-			images2[7] = "no";
-			images2[8] = "no";
+			images2[0] = "New_maps/empty.png";
+			images2[1] = "New_maps/empty.png";
+			images2[2] = "New_maps/empty.png";
+			images2[3] = "New_maps/empty.png";
+			images2[4] = "New_maps/room005.png";
+			images2[5] = "New_maps/empty.png";
+			images2[6] = "New_maps/empty.png";
+			images2[7] = "New_maps/empty.png";
+			images2[8] = "New_maps/empty.png";
+			
+			image3.src = "New_maps/compass001.png";
+			
+			//Create the objects
+			var objects1 = [];
+			objects1[0] = ["key1"];
+			objects1[1] = ["key2"];
+			objects1[2] = ["key3"];
+			objects1[3] = ["key4"];
+			objects1[4] = ["key5"];
+			objects1[5] = ["key6"];
+			objects1[6] = ["key7"];
+			objects1[7] = ["key8"];
+			objects1[8] = ["key9"];
+			
+			//Create the progress bar
+			var progress1 = [];
+			progress1[0] = "white";
+			progress1[1] = "white";
+			progress1[2] = "white";
+			progress1[3] = "white";
+			progress1[4] = "white";
+			progress1[5] = "white";
+			progress1[6] = "white";
+			progress1[7] = "white";
+			progress1[8] = "white";
+			
+			var invCount = 0;
+			var counter;
+			
+			var inventory1 = [];
+			var taken = "no";
+			var dropped = "no";
+			var takeall = [];
+			var dropall = [];
 			
 			//Set the player's start location
 			var mapLocation = 4;
@@ -121,52 +213,94 @@
 			var playersInput = "";
 			
 			//Initialize the gameMessage
-			gameMessage = "Where do you want to go?\n\nType help for help!";
+			var gameMessage = "";
+			goal();
 			
 			//Create an array of actions the game understands
 			//and a variable to store the current action
-			var actionsIKnow = [" ", "help", "diary", "clrdiary", "reset", "north", "south", "east", "west"];
+			var actionsIKnow = [" ", "help", "diary", "clrdiary", "reset", "look", "take", "drop", "goal", "inventory", "north", "south", "east", "west"];
 			var action = "";
 			
 			//The input and output fields
-			var output = document.querySelector("#output");
+			//var output = document.querySelector("#output");
 			var input = document.querySelector("#input");
 			
 			//The images
 			var image1 = document.querySelector("#image1");
-			var image2 = document.querySelector("#image2");
 			
-			//The button (mouse left-click) event
-			var button = document.querySelector("button");
-			button.style.cursor = "pointer";
-			button.addEventListener("click", clickHandler, false);
+			//The button (mouse left-click) events
+			var button1 = document.querySelector("#button1");
+			button1.style.cursor = "pointer";
+			button1.addEventListener("click", clickHandler, false);
+			
+			var button2 = document.querySelector("#button2");
+			button2.style.cursor = "pointer";
+			button2.addEventListener("click", locationReload, false);
+			
+			var button3 = document.querySelector("#button3");
+			button3.style.cursor = "pointer";
+			button3.addEventListener("click", locationAbandon, false);
+			
+			//Tab key event
+			var Div1 = document.querySelector("#overlay1");
+			Div1.style.cursor = "pointer";
+			input.addEventListener("keyup", function(event) {
+				if (event.keyCode === 9) firstDiv();
+			}); 
 			
 			//Enter key event
 			input.addEventListener("keyup", function(event) {
-				if (event.keyCode === 13) clickHandler()
+				if (event.keyCode === 13) clickHandler();
 			}); 
 			
 			//Display the player's location
 			render();
 			
+			function firstDiv()
+			{
+				document.getElementById("overlay1").style.display = "none";
+				render();
+			}
+			
+			function locationReload()
+			{
+				location.reload();
+			}
+			
+			function locationAbandon()
+			{
+				document.getElementById("overlay2").style.display = "none";
+				document.getElementById("main").style.display = "none";
+			}
+			
 			function clickHandler()
 			{
 				playGame();
 			}
-			
+			function goal()
+			{
+				gameMessage = "Every room has a key of its own name inside of it.\n";
+				gameMessage += "Goal of the game is to reverse the keys in opposition to the room names.\n";
+				gameMessage += "The one key that can't be opposed must be in your posesion.\n\n";
+				gameMessage += "Type help for help!";
+				return gameMessage;
+			}
 			function playGame()
 			{
 				//Get the player's input and convert it to lowercase
 				playersInput = input.value;
 				playersInput = playersInput.toLowerCase();
-				playersInput = playersInput.trim();
+				//playersInput = playersInput.trim();
+				
+				var playersInputTrim = playersInput.split(/(\s+)/).filter( function(e) { return e.trim().length > 0; } );
+				var playersInputMinus = playersInput.substr(playersInput.indexOf(" ") + 1);
 				
 				//If no input > converts it to single space
-				if(playersInput.length === 0) playersInput = " "
+				if(playersInputTrim.length === 0) playersInputTrim = " ";
 				
 				//Stores all commands in localStorage and pushes new values without overwriting old values
 				var aNumber = !!localStorage.getItem('number') ? JSON.parse(localStorage.getItem('number')) : [];
-				number = document.getElementById('input').value;
+				var number = document.getElementById('input').value;
 				aNumber.push(number);
 				localStorage.setItem('number', JSON.stringify(aNumber));
 				
@@ -175,10 +309,11 @@
 				action = "";
 				
 				//Figure out the players' action
-				for(var i = 0; i < actionsIKnow.length; i++)
-					if(playersInput === actionsIKnow[i])
+				for(counter = 0; counter < actionsIKnow.length; counter++)
+					if(playersInputTrim[0] === actionsIKnow[counter])
+					//if(playersInputTrim.indexOf(actionsIKnow[counter]) !== -1)
 					{
-						action = actionsIKnow[i];
+						action = actionsIKnow[counter];
 						break;
 					}
 				
@@ -192,7 +327,22 @@
 					}
 					case "help":
 					{
-						gameMessage = "Here is a list of commands you can try:\n\nhelp - returns all available commands\ndiary - returns all commands you tried\nclrdiary - clears all entries from diary\nreset - restarts the game\n\nnorth - tries to go north\nsouth - tries to go south\neast - tries to go east\nwest - tries to go west\n"
+						gameMessage = "Here is a list of commands you can try:\n\n";
+						gameMessage += "help - returns all available commands\n";
+						gameMessage += "goal - returns goal of the game\n";
+						gameMessage += "diary - returns all commands you tried\n";
+						gameMessage += "clrdiary - clears all entries from diary\n";
+						gameMessage += "reset - restarts the game\n";
+						gameMessage += "look - looks around the room\n";
+						gameMessage += "take <object name> - takes object from room\n";
+						gameMessage += "take all - take all objects from room\n";
+						gameMessage += "drop <object name> - drops object in room\n";
+						gameMessage += "drop all - drops all objects in room\n";
+						gameMessage += "inventory - displays contents of your inventory\n\n";
+						gameMessage += "north - tries to go north\n";
+						gameMessage += "south - tries to go south\n";
+						gameMessage += "east - tries to go east\n";
+						gameMessage += "west - tries to go west\n";
 						break;
 					}
 					case "diary":
@@ -205,13 +355,170 @@
 					{
 						//Clears localStorage
 						localStorage.removeItem('number');
-						gameMessage = "Diary cleared"
+						gameMessage = "Diary cleared";
 						break;
 					}
 					case "reset":
 					{
 						//Reloads window
-						location.reload();
+						locationReload();
+						break;
+					}
+					case "look":
+					{
+						if(objects1[mapLocation].length != 0 )
+							gameMessage = "You can see " + objects1[mapLocation] + " lying on the floor.";
+						else
+							gameMessage = "There is nothing on the floor";
+						break;
+					}
+					case "goal":
+					{
+						goal(gameMessage);
+						break;
+					}
+					case "take":
+					{
+						if(playersInputTrim[1] === undefined)
+							gameMessage = "Take what?";
+						else
+						{
+							if(objects1[mapLocation].length === 0 )
+								gameMessage = "There are no keys here.";
+							else
+							{
+								if(playersInputTrim[1] === "all")
+								{
+									for(counter = 0; counter < objects1[mapLocation].length; counter++)
+									{
+										inventory1.push(objects1[mapLocation][counter]);
+										takeall.push(objects1[mapLocation][counter]);
+										taken = "yes";
+										objects1[mapLocation][counter] = undefined;
+									}
+									objects1[mapLocation].length = 0;
+								}
+								else
+								{
+									for(counter = 0; counter < objects1[mapLocation].length; counter++)
+									{
+										if(playersInputTrim[1] === objects1[mapLocation][counter])
+										{
+											inventory1.push(objects1[mapLocation][counter]);
+											takeall.push(objects1[mapLocation][counter]);
+											objects1[mapLocation][counter] = "eraseme";
+											taken = "yes";
+										}
+									}	
+								}
+								
+								for(counter = 0; counter < objects1[mapLocation].length; counter++)
+								{
+									if(objects1[mapLocation][counter] === "eraseme")
+									{
+										if(objects1[mapLocation][counter+1])
+										{
+											objects1[mapLocation][counter] = objects1[mapLocation][counter+1];
+											objects1[mapLocation][counter+1] = "eraseme";
+										}
+										else
+										{
+											objects1[mapLocation][counter] = undefined;
+											objects1[mapLocation].length -= 1;
+											invCount += 1;
+										}
+									}
+								}
+								if (taken === "yes")
+								{
+									gameMessage = "You take " +  takeall + " and put it in your inventory.";
+								}
+								if (taken === "no")
+								{
+									gameMessage = "There is no " + playersInputMinus + " in that location. Maybe there is another key in that location.";
+								}
+								taken = "no";
+								takeall = [];
+								takeall.length = 0;
+							}
+						}
+						break;
+					}
+					case "drop":
+					{
+						if(playersInputTrim[1] === undefined)
+							gameMessage = "Drop what?";
+						else
+						{
+							if(inventory1.length === 0)
+								gameMessage = "You've got nothing in your inventory.";
+							else
+							{
+								if(playersInputTrim[1] === "all")
+								{
+									for(counter = 0; counter < inventory1.length; counter++)
+									{
+										objects1[mapLocation].push(inventory1[counter]);
+										dropall.push(inventory1[counter]);
+										dropped = "yes";
+										inventory1[counter] = undefined;
+									}
+									inventory1.length = 0;
+								}
+								else
+								{
+									for(counter = 0; counter < inventory1.length; counter++)
+									{
+										if (playersInputTrim[1] === inventory1[counter])
+										{
+											objects1[mapLocation].push(inventory1[counter]);
+											dropall.push(inventory1[counter]);
+											inventory1[counter] = "eraseme";
+											dropped = "yes";
+										}
+									}
+								}
+								
+								for(counter = 0; counter < inventory1.length; counter++)
+								{
+									if(inventory1[counter] === "eraseme")
+									{
+										if(inventory1[counter+1])
+										{
+											inventory1[counter] = inventory1[counter+1];
+											inventory1[counter+1] = "eraseme";
+										}
+										else
+										{
+											inventory1[counter] = undefined;
+											inventory1.length -= 1;
+											invCount -= 1;
+										}
+									}
+								}
+								if (dropped === "yes")
+								{
+									gameMessage = "You drop " + dropall + " and put it on the floor.";
+								}
+								if (dropped === "no")
+								{
+									gameMessage = "There is no " + playersInputMinus + " in your inventory.";
+								}
+								dropped = "no";
+								dropall = [];
+								dropall.length = 0;
+							}
+						}							
+						break;
+					}
+					case "inventory":
+					{
+						if(inventory1.length != 0)
+						{
+							gameMessage = "Your inventory: " + inventory1;
+						}
+						else
+							gameMessage = "Your inventory is empty.";
 						break;
 					}
 					case "north":
@@ -270,14 +577,60 @@
 						gameMessage = "I don't understand that!\n\nType help for help!";
 				}
 				//Updates map images
-				if(mapLocation === 0) images2[0] = "yes";
-				if(mapLocation === 1) images2[1] = "yes";
-				if(mapLocation === 2) images2[2] = "yes";
-				if(mapLocation === 3) images2[3] = "yes";
-				if(mapLocation === 5) images2[5] = "yes";
-				if(mapLocation === 6) images2[6] = "yes";
-				if(mapLocation === 7) images2[7] = "yes";
-				if(mapLocation === 8) images2[8] = "yes";
+				if(mapLocation === 0) images2[0] = "New_maps/room001.png";
+				if(mapLocation === 1) images2[1] = "New_maps/room002.png";
+				if(mapLocation === 2) images2[2] = "New_maps/room003.png";
+				if(mapLocation === 3) images2[3] = "New_maps/room004.png";
+				if(mapLocation === 5) images2[5] = "New_maps/room006.png";
+				if(mapLocation === 6) images2[6] = "New_maps/room007.png";
+				if(mapLocation === 7) images2[7] = "New_maps/room008.png";
+				if(mapLocation === 8) images2[8] = "New_maps/room009.png";
+				
+				var progCount = 0;
+				
+				for(counter = 0; counter < 9; counter ++)
+				{
+					if(objects1[0][counter] === "key9"){
+						progCount += 1;
+					}
+					if(objects1[1][counter] === "key8"){
+						progCount += 1;
+					}
+					if(objects1[2][counter] === "key7"){
+						progCount += 1;
+					}
+					if(objects1[3][counter] === "key6"){
+						progCount += 1;
+					}
+					if(inventory1[counter] === "key5"){
+						progCount += 1;
+					}
+					if(objects1[5][counter] === "key4"){
+						progCount += 1;
+					}
+					if(objects1[6][counter] === "key3"){
+						progCount += 1;
+					}
+					if(objects1[7][counter] === "key2"){
+						progCount += 1;
+					}
+					if(objects1[8][counter] === "key1"){
+						progCount += 1;
+					}
+				}
+				
+				for(counter = 0; counter < 9; counter ++)
+				{
+					if(counter < progCount)
+						progress1[counter] = "green";
+					else
+						progress1[counter] = "white";
+				}
+				
+				if(progCount === 9)
+				{
+					document.getElementById("overlay2").style.display = "block";
+				}
 				
 				//Clears input
 				document.getElementById("input").value = "";
@@ -291,60 +644,54 @@
 				//Render the location
 				
 				//Display the location - text
-				//output.innerHTML = map[mapLocation];
+				//output.innerHTML = maps1[mapLocation];
 				
 				//Updates paragraph id - output with - output variable
-				document.getElementById('output').innerText = map[mapLocation]
+				document.getElementById('output').innerText = maps1[mapLocation];
 				
-				image1.src = "New_maps/" + images1[mapLocation];
-
-				//image2.src = "images/" + images2[mapLocation];
+				image1.src = images1[mapLocation];
 				
-				image3.src = "New_maps/compass001.png";
+				image001.src = images2[0];
+				image002.src = images2[1];
+				image003.src = images2[2];
+				image004.src = images2[3];
+				image005.src = images2[4];
+				image006.src = images2[5];
+				image007.src = images2[6];
+				image008.src = images2[7];
+				image009.src = images2[8];
 				
-				if(images2[0] === "no")
-					image001.src = "New_maps/empty.png";
-				if(images2[0] === "yes")
-					image001.src = "New_maps/001.png";
-				if(images2[1] === "no")
-					image002.src = "New_maps/empty.png";
-				if(images2[1] === "yes")
-					image002.src = "New_maps/002.png";
-				if(images2[2] === "no")
-					image003.src = "New_maps/empty.png";
-				if(images2[2] === "yes")
-					image003.src = "New_maps/003.png";
-				if(images2[3] === "no")
-					image004.src = "New_maps/empty.png";
-				if(images2[3] === "yes")
-					image004.src = "New_maps/004.png";
-				image005.src = "New_maps/005.png";
-				if(images2[5] === "no")
-					image006.src = "New_maps/empty.png";
-				if(images2[5] === "yes")
-					image006.src = "New_maps/006.png";
-				if(images2[6] === "no")
-					image007.src = "New_maps/empty.png";
-				if(images2[6] === "yes")
-					image007.src = "New_maps/007.png";
-				if(images2[7] === "no")
-					image008.src = "New_maps/empty.png";
-				if(images2[7] === "yes")
-					image008.src = "New_maps/008.png";
-				if(images2[8] === "no")
-					image009.src = "New_maps/empty.png";
-				if(images2[8] === "yes")
-					image009.src = "New_maps/009.png";
+				document.getElementById('div1');
+				div1.style.backgroundColor = progress1[0];
+				document.getElementById('div2');
+				div2.style.backgroundColor = progress1[1];
+				document.getElementById('div3');
+				div3.style.backgroundColor = progress1[2];
+				document.getElementById('div4');
+				div4.style.backgroundColor = progress1[3];
+				document.getElementById('div5');
+				div5.style.backgroundColor = progress1[4];
+				document.getElementById('div6');
+				div6.style.backgroundColor = progress1[5];
+				document.getElementById('div7');
+				div7.style.backgroundColor = progress1[6];
+				document.getElementById('div8');
+				div8.style.backgroundColor = progress1[7];
+				document.getElementById('div9');
+				div9.style.backgroundColor = progress1[8];
 				
 				//Display the game message
 				//output.innerHTML += "<br><em>" + gameMessage + "</em>";
 				
 				//Updates paragraph id - game message with - gameMessage variable
-				document.getElementById('game message').innerText = gameMessage
+				document.getElementById('game message').innerText = gameMessage;
 				
-				//Places cursor on the input field
-				input.focus();
-				input.setSelectionRange(0, 0);
+				if(document.getElementById("overlay1").style.display === "none")
+				{
+					//Places cursor on the input field
+					input.focus();
+					input.setSelectionRange(0, 0);
+				}
 			}
 		}
 	</script>
