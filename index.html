@@ -244,9 +244,11 @@
 			//Tab key event
 			var Div1 = document.querySelector("#overlay1");
 			Div1.style.cursor = "pointer";
-			input.addEventListener("keyup", function(event) {
-				if (event.keyCode === 9) firstDiv();
-			}); 
+			Div1.addEventListener("click", firstDiv, false);
+			
+			//input.addEventListener("keyup", function(event) {
+				//if (event.keyCode === 9) firstDiv();
+			//}); 
 			
 			//Enter key event
 			input.addEventListener("keyup", function(event) {
