@@ -15,11 +15,29 @@
 		}
 		h1
 		{
-			margin:250px 0 0 0;
+			margin:200px 0 0 0;
 			padding:0px;
-			color:green;
+			color:lightblue;
 			font-family:"Times New Roman";
 			font-size:30px;
+			text-align:center;
+		}
+		h2
+		{
+			margin:150px 0 0 0;
+			padding:0px;
+			color:lightgreen;
+			font-family:"Times New Roman";
+			font-size:22px;
+			text-align:center;
+		}
+		h3
+		{
+			margin:40px 0 0 0;
+			padding:0px;
+			color:lightgreen;
+			font-family:"Times New Roman";
+			font-size:20px;
 			text-align:center;
 		}
 		p
@@ -54,7 +72,7 @@
 		  position: fixed;
 		  display: block;
 		  width:618px;
-		  height:837px;
+		  height:570px;
 		  top: 0;
 		  left: 0;
 		  right: 0;
@@ -68,7 +86,7 @@
 		  position: fixed;
 		  display: none;
 		  width:618px;
-		  height:837px;
+		  height:570px;
 		  top: 0;
 		  left: 0;
 		  right: 0;
@@ -77,65 +95,194 @@
 		  z-index: 2;
 		  /* cursor: pointer; */
 		}
+		#overlay3 {
+		  border:1px solid white;
+		  position: fixed;
+		  display: none;
+		  width:618px;
+		  height:570px;
+		  top: 0;
+		  left: 0;
+		  right: 0;
+		  bottom: 0;
+		  background-color: rgba(0,0,0,0.8);
+		  z-index: 2;
+		  /* cursor: pointer; */
+		}
+		#overlay4 {
+		  border:1px solid white;
+		  position: fixed;
+		  display: none;
+		  width:618px;
+		  height:570px;
+		  top: 0;
+		  left: 0;
+		  right: 0;
+		  bottom: 0;
+		  background-color: rgba(0,0,0,0.8);
+		  z-index: 2;
+		  /* cursor: pointer; */
+		}
+		#dropdown-content {
+		  display: none;
+		  position: absolute;
+		  background-color: #f1f1f1;
+		  min-width: 160px;
+		  overflow: auto;
+		  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		  z-index: 1;
+		}
 		<!--<link rel="stylesheet" href="Template_Notification_CSS_halmed_glpi_simple_update3.css">-->
 </style>
 </head>
 <body>
 	<div id="overlay1"><h1>Are you ready to start the game?<br><br>Click on the screen to start the game!</h1></div>
-	<div id="overlay2">
+	<div id="overlay2"><h2>Use arrow keys or buttons to move on the map.<br><br>
+							Every room has a key of its own name inside of it.<br><br>
+							Goal of the game is to reverse the keys in opposition to the room names.<br>
+							The one key that can't be opposed must be in your posesion.<br><br>
+							Type help for help!</h2></div>
+	<div id="overlay3"><h3>Here is a list of commands you can try:<br><br>
+						help - returns all available commands<br>
+						goal - returns goal of the game<br>
+						diary - returns all commands you tried<br>
+						clrdiary - clears all entries from diary<br>
+						reset - restarts the game<br>
+						look - looks around the room<br>
+						take object name - takes object from room<br>
+						take all - take all objects from room<br>
+						drop object name - drops object in room<br>
+						drop all - drops all objects in room<br>
+						inventory - displays contents of your inventory<br><br>
+						north - tries to go north<br>
+						south - tries to go south<br>
+						east - tries to go east<br>
+						west - tries to go west</h3></div>
+	<div id="overlay4">
 		<h1>Congratulation on completing the game!<br><br>Do you want to play again?</h1>
 		<button id="button2" style="margin:100px 0 0 200px;border:1px solid gray;width:50px;height:25px;">Yes</button>
 		<button id="button3" style="margin:0 0 0 100px;border:1px solid gray;width:50px;height:25px;">No</button>
 	</div>
-	<div id="main" style="float:none;border:1px solid white;width:616px;height:835px;">
+	<div id="main" style="float:none;border:1px solid gray;width:616px;height:568px;">
 		<p id="output" style="float:left;border:1px solid gray;width:306px;text-align:center;"></p>
-		<p style="float:left;border:1px solid gray;width:152px;text-align:center;">ROOM</p>
-		<p style="float:left;border:1px solid gray;width:152px;text-align:center;">INVENTORY</p>
+		<p id="button14" style="float:left;background-color:lightgray;border:1px solid gray;width:152px;text-align:center;">ROOM</p>
+		<p id="button15" style="float:left;background-color:lightgray;border:1px solid gray;width:152px;text-align:center;">INVENTORY</p>
 		<div style="float:left;border:1px solid white;width:306px;height:306px;">
-			<image id="image001" src="" style="border:1px solid gray;float:left;width:100px;height:100px;"></image>
-			<image id="image002" src="" style="border:1px solid gray;float:left;width:100px;height:100px;"></image>
-			<image id="image003" src="" style="border:1px solid gray;float:left;width:100px;height:100px;"></image>
-			<image id="image004" src="" style="border:1px solid gray;float:left;width:100px;height:100px;"></image>
-			<image id="image005" src="" style="border:1px solid gray;float:left;width:100px;height:100px;"></image>
-			<image id="image006" src="" style="border:1px solid gray;float:left;width:100px;height:100px;"></image>
-			<image id="image007" src="" style="border:1px solid gray;float:left;width:100px;height:100px;"></image>
-			<image id="image008" src="" style="border:1px solid gray;float:left;width:100px;height:100px;"></image>
-			<image id="image009" src="" style="border:1px solid gray;float:left;width:100px;height:100px;"></image>
+			<image id="image1" src="" style="border:1px solid gray;float:left;width:100px;height:100px;"></image>
+			<image id="image2" src="" style="border:1px solid gray;float:left;width:100px;height:100px;"></image>
+			<image id="image3" src="" style="border:1px solid gray;float:left;width:100px;height:100px;"></image>
+			<image id="image4" src="" style="border:1px solid gray;float:left;width:100px;height:100px;"></image>
+			<image id="image5" src="" style="border:1px solid gray;float:left;width:100px;height:100px;"></image>
+			<image id="image6" src="" style="border:1px solid gray;float:left;width:100px;height:100px;"></image>
+			<image id="image7" src="" style="border:1px solid gray;float:left;width:100px;height:100px;"></image>
+			<image id="image8" src="" style="border:1px solid gray;float:left;width:100px;height:100px;"></image>
+			<image id="image9" src="" style="border:1px solid gray;float:left;width:100px;height:100px;"></image>
 		</div>
 		<div style="float:left;border:1px solid gray;width:306px;height:306px;">
-			<div style="float:left;border:1px solid gray;width:151px;height:304px;"><p id="roomObj" style="text-align:center;"></p></div>
-			<div style="float:left;border:1px solid gray;width:151px;height:304px;"><p id="invObj" style="text-align:center;"></p></div>
-			<!--<image id="image1" src="" style="border:1px solid gray;width:304px;height:304px;"></image>-->
+			<div style="float:left;border:1px solid gray;width:151px;height:304px;">
+				<p style="float:left;text-align:center;border:1px solid white;width:48px;height:32px;"></p>
+				<p id="roomObj1" style="float:left;text-align:center;border:1px solid white;width:49px;height:32px;"></p>
+				<p style="float:left;text-align:center;border:1px solid white;width:48px;height:32px;"></p>
+				<p style="float:left;text-align:center;border:1px solid white;width:48px;height:32px;"></p>
+				<p id="roomObj2" style="float:left;text-align:center;border:1px solid white;width:49px;height:32px;"></p>
+				<p style="float:left;text-align:center;border:1px solid white;width:48px;height:32px;"></p>
+				<p style="float:left;text-align:center;border:1px solid white;width:48px;height:32px;"></p>
+				<p id="roomObj3" style="float:left;text-align:center;border:1px solid white;width:49px;height:32px;"></p>
+				<p style="float:left;text-align:center;border:1px solid white;width:48px;height:32px;"></p>
+				<p style="float:left;text-align:center;border:1px solid white;width:48px;height:32px;"></p>
+				<p id="roomObj4" style="float:left;text-align:center;border:1px solid white;width:49px;height:32px;"></p>
+				<p style="float:left;text-align:center;border:1px solid white;width:48px;height:32px;"></p>
+				<p style="float:left;text-align:center;border:1px solid white;width:48px;height:32px;"></p>
+				<p id="roomObj5" style="float:left;text-align:center;border:1px solid white;width:49px;height:32px;"></p>
+				<p style="float:left;text-align:center;border:1px solid white;width:48px;height:32px;"></p>
+				<p style="float:left;text-align:center;border:1px solid white;width:48px;height:32px;"></p>
+				<p id="roomObj6" style="float:left;text-align:center;border:1px solid white;width:49px;height:32px;"></p>
+				<p style="float:left;text-align:center;border:1px solid white;width:48px;height:32px;"></p>
+				<p style="float:left;text-align:center;border:1px solid white;width:48px;height:32px;"></p>
+				<p id="roomObj7" style="float:left;text-align:center;border:1px solid white;width:49px;height:32px;"></p>
+				<p style="float:left;text-align:center;border:1px solid white;width:48px;height:32px;"></p>
+				<p style="float:left;text-align:center;border:1px solid white;width:48px;height:32px;"></p>
+				<p id="roomObj8" style="float:left;text-align:center;border:1px solid white;width:49px;height:32px;"></p>
+				<p style="float:left;text-align:center;border:1px solid white;width:48px;height:32px;"></p>
+				<p style="float:left;text-align:center;border:1px solid white;width:48px;height:32px;"></p>
+				<p id="roomObj9" style="float:left;text-align:center;border:1px solid white;width:49px;height:32px;"></p>
+				<p style="float:left;text-align:center;border:1px solid white;width:48px;height:32px;"></p>
+			</div>
+			<div style="float:left;border:1px solid gray;width:151px;height:304px;">
+				<p style="float:left;text-align:center;border:1px solid white;width:48px;height:32px;"></p>
+				<p id="invObj1" style="float:left;text-align:center;border:1px solid white;width:49px;height:32px;"></p>
+				<p style="float:left;text-align:center;border:1px solid white;width:48px;height:32px;"></p>
+				<p style="float:left;text-align:center;border:1px solid white;width:48px;height:32px;"></p>
+				<p id="invObj2" style="float:left;text-align:center;border:1px solid white;width:49px;height:32px;"></p>
+				<p style="float:left;text-align:center;border:1px solid white;width:48px;height:32px;"></p>
+				<p style="float:left;text-align:center;border:1px solid white;width:48px;height:32px;"></p>
+				<p id="invObj3" style="float:left;text-align:center;border:1px solid white;width:49px;height:32px;"></p>
+				<p style="float:left;text-align:center;border:1px solid white;width:48px;height:32px;"></p>
+				<p style="float:left;text-align:center;border:1px solid white;width:48px;height:32px;"></p>
+				<p id="invObj4" style="float:left;text-align:center;border:1px solid white;width:49px;height:32px;"></p>
+				<p style="float:left;text-align:center;border:1px solid white;width:48px;height:32px;"></p>
+				<p style="float:left;text-align:center;border:1px solid white;width:48px;height:32px;"></p>
+				<p id="invObj5" style="float:left;text-align:center;border:1px solid white;width:49px;height:32px;"></p>
+				<p style="float:left;text-align:center;border:1px solid white;width:48px;height:32px;"></p>
+				<p style="float:left;text-align:center;border:1px solid white;width:48px;height:32px;"></p>
+				<p id="invObj6" style="float:left;text-align:center;border:1px solid white;width:49px;height:32px;"></p>
+				<p style="float:left;text-align:center;border:1px solid white;width:48px;height:32px;"></p>
+				<p style="float:left;text-align:center;border:1px solid white;width:48px;height:32px;"></p>
+				<p id="invObj7" style="float:left;text-align:center;border:1px solid white;width:49px;height:32px;"></p>
+				<p style="float:left;text-align:center;border:1px solid white;width:48px;height:32px;"></p>
+				<p style="float:left;text-align:center;border:1px solid white;width:48px;height:32px;"></p>
+				<p id="invObj8" style="float:left;text-align:center;border:1px solid white;width:49px;height:32px;"></p>
+				<p style="float:left;text-align:center;border:1px solid white;width:48px;height:32px;"></p>
+				<p style="float:left;text-align:center;border:1px solid white;width:48px;height:32px;"></p>
+				<p id="invObj9" style="float:left;text-align:center;border:1px solid white;width:49px;height:32px;"></p>
+				<p style="float:left;text-align:center;border:1px solid white;width:48px;height:32px;"></p>
+			</div>
 		</div>
-		<div style="float:left;border:1px solid gray;width:306px;height:406px;">
+		<div style="float:left;border:1px solid gray;width:306px;height:158px;">
 			<p id="game message" style="border:1px solid white;width:304px;height:404px;word-wrap:break-word;"></p></textarea>
 		</div>
-		<div style="float:left;border:1px solid gray;width:306px;height:406px;">
-			<div style="float:left;border:1px solid white;width:161px;height:98px;">
-				<div style="float:left;border:1px solid white;width:159px;height:27px;">
-					<button id="button4" style="background-color:lightgreen;margin-left:51px;border:1px solid gray;width:50px;height:25px;">N</button>
+		<div style="float:left;border:1px solid gray;width:306px;height:158px;">
+			<div style="float:left;border:1px solid gray;width:151px;height:156px;">
+				<div style="float:left;border:1px solid white;width:159px;height:25px;">
+					<button id="button4" style="background-color:lightgreen;margin-left:51px;border:1px solid gray;width:45px;height:20px;">N</button>
 				</div>
-				<div style="float:left;border:1px solid white;width:159px;height:27px;">
-					<button id="button6" style="background-color:lightgreen;border:1px solid gray;width:50px;height:25px;">W</button>
-					<button id="button7" style="background-color:lightgreen;margin-left:48px;border:1px solid gray;width:50px;height:25px;">E</button>
+				<div style="float:left;border:1px solid white;width:159px;height:25px;">
+					<button id="button6" style="background-color:lightgreen;margin-left:5px;border:1px solid gray;width:45px;height:20px;">W</button>
+					<button id="button7" style="background-color:lightgreen;margin-left:43px;border:1px solid gray;width:45px;height:20px;">E</button>
 				</div>
-				<div style="float:left;border:1px solid white;width:159px;height:27px;">
-					<button id="button5" style="background-color:lightgreen;margin-left:51px;border:1px solid gray;width:50px;height:25px;">S</button>
+				<div style="float:left;border:1px solid white;width:159px;height:50px;">
+					<button id="button5" style="background-color:lightgreen;margin-left:51px;border:1px solid gray;width:45px;height:20px;">S</button>
 				</div>
-			</div>
-			<div style="float:left;border:1px solid white;width:141px;height:98px;">
-				<div style="float:left;border:1px solid white;width:139px;height:47px;">
-					<button id="button8" style="background-color:lightblue;margin-left:40px;border:1px solid gray;width:80px;height:25px;">TAKE ALL</button>
+				<div style="float:left;border:1px solid white;width:159px;height:25px;">
+					<button id="button16" style="background-color:yellow;margin-left:51px;border:1px solid gray;width:50px;height:20px;">HELP</button>
 				</div>
-				<div style="float:left;border:1px solid white;width:139px;height:47px;">
-					<button id="button9" style="background-color:lightblue;margin-left:40px;border:1px solid gray;width:80px;height:25px;">DROP ALL</button>
+				<div style="float:left;border:1px solid white;width:159px;height:25px;">
+					<button id="button12" style="background-color:orange;margin-left:25px;border:1px solid gray;width:100px;height:20px;">SHOW INPUT</button>
 				</div>
 			</div>
-			<image id="image3" src="" style="border:1px solid gray;width:304px;height:304px;"></image>
+			<div style="float:left;border:1px solid gray;width:151px;height:156px;">
+				<div style="float:left;border:1px solid white;width:139px;height:25px;">
+					<button id="button8" style="background-color:lightblue;margin-left:35px;border:1px solid gray;width:80px;height:20px;">TAKE ALL</button>
+				</div>
+				<div style="float:left;border:1px solid white;width:139px;height:25px;">
+					<button id="button9" style="background-color:lightblue;margin-left:35px;border:1px solid gray;width:80px;height:20px;">DROP ALL</button>
+				</div>
+				<div style="float:left;border:1px solid white;width:139px;height:50px;">
+					<button id="button10" style="background-color:lightgray;margin-left:25px;border:1px solid gray;width:50px;height:20px;">TAKE</button>
+					<button id="button11" style="background-color:lightgray;margin-left:0px;border:1px solid gray;width:50px;height:20px;">DROP</button>
+				</div>
+				<div style="float:left;border:1px solid white;width:139px;height:25px;">
+					<button id="button17" style="background-color:yellow;margin-left:51px;border:1px solid gray;width:50px;height:20px;">GOAL</button>
+				</div>
+				<div style="float:left;border:1px solid white;width:139px;height:20px;">
+					<button id="button13" style="background-color:orange;margin-left:25px;border:1px solid gray;width:100px;height:20px;">HIDE INPUT</button>
+				</div>
+			</div>
+			<!--<image id="compass" src="" style="border:1px solid gray;width:304px;height:304px;"></image>-->
 		</div>
-		<div style="float:left;border:1px solid gray;width:614px;height:50px;">
-			<input id="input" type="text" placeholder="Enter your action..." style="border:1px solid gray;width:302px;height:25px;">
-			<button id="button1" style="border:1px solid gray;width:50px;height:25px;">Enter</button>
+		<div style="float:left;border:1px solid gray;width:614px;height:30px;">
+			<input id="input" type="text" placeholder="Enter your action..." style="float:left;border:1px solid gray;width:302px;height:25px;">
+			<button id="button1" style="margin:2px 0 0 4px;float:left;border:1px solid gray;width:50px;height:25px;">Enter</button>
 		</div>
 		<p style="float:left;border:1px solid gray;width:614px;text-align:center;">PROGRESS BAR</p>
 		<div style="float:left;border:1px solid black;width:612px;height:25px;">
@@ -194,7 +341,7 @@
 			images2[7] = "New_maps/empty.png";
 			images2[8] = "New_maps/empty.png";
 			
-			image3.src = "New_maps/compass001.png";
+			//compass.src = "New_maps/compass001.png";
 			
 			//Create the objects
 			var objects1 = [];
@@ -231,6 +378,9 @@
 			var takeall = [];
 			var dropall = [];
 			
+			var temp1 = "";
+			var temp2 = "";
+			
 			//Set the player's start location
 			var mapLocation = 4;
 			
@@ -239,25 +389,27 @@
 			
 			//Initialize the gameMessage
 			var gameMessage = "";
-			goal();
 			
 			//Create an array of actions the game understands
 			//and a variable to store the current action
-			var actionsIKnow = ["help", "helpme", "helpmeto", "diary", "clrdiary", "reset", "look", "take", "drop", "goal", "!!!admtake", "!!!admdrop", "!!!admlook", "!!!admup", "!!!admdown", "inventory", "north", "south", "east", "west"];
+			var actionsIKnow = ["help", "diary", "clrdiary", "reset", "look", "take", "drop", "goal", "!!!admtake", "!!!admdrop", "!!!admlook", "!!!admup", "!!!admdown", "inventory", "north", "south", "east", "west"];
 			
-			var action = ""; //
-			var chkAction = ""; //
-			var origAction = ""; //
-			var countOrigAction = 0; //
-			var commands = []; //
-			var chkcommands = 0; //
+			var action = "";
+			var chkAction = "";
+			var origAction = "";
+			var countOrigAction = 0;
+			var commands = [];
+			var chkcommands = 0;
+			var selection = "";
+			var prevSelection = "";
+			var ifTake = "no";
+			var ifDrop = "no";
 			
 			//The input and output fields
 			//var output = document.querySelector("#output");
 			var input = document.querySelector("#input");
-			
-			//The images
-			//var image1 = document.querySelector("#image1");
+			document.getElementById("input").style.display = "none";
+			document.getElementById("button1").style.display = "none";
 			
 			//The button (mouse left-click) events
 			var button1 = document.querySelector("#button1");
@@ -274,36 +426,238 @@
 			
 			var button4 = document.querySelector("#button4");
 			button4.style.cursor = "pointer";
-			button4.addEventListener("click", North, false);
+			button4.addEventListener("click", () => {
+				input.value = "north"
+				clickHandler();
+			});
 			
 			var button5 = document.querySelector("#button5");
 			button5.style.cursor = "pointer";
-			button5.addEventListener("click", South, false);
+			button5.addEventListener("click", () => {
+				input.value = "south"
+				clickHandler();
+			});
 			
 			var button6 = document.querySelector("#button6");
 			button6.style.cursor = "pointer";
-			button6.addEventListener("click", West, false);
+			button6.addEventListener("click", () => {
+				input.value = "west"
+				clickHandler();
+			});
 			
 			var button7 = document.querySelector("#button7");
 			button7.style.cursor = "pointer";
-			button7.addEventListener("click", East, false);
+			button7.addEventListener("click", () => {
+				input.value = "east"
+				clickHandler();
+			});
 			
 			var button8 = document.querySelector("#button8");
 			button8.style.cursor = "pointer";
-			button8.addEventListener("click", TakeAll, false);
+			button8.addEventListener("click", () => {
+				input.value = "take all"
+				clickHandler();
+			});
 			
 			var button9 = document.querySelector("#button9");
 			button9.style.cursor = "pointer";
-			button9.addEventListener("click", DropAll, false);
+			button9.addEventListener("click", () => {
+				input.value = "drop all"
+				clickHandler();
+			});
+			
+			var button10 = document.querySelector("#button10");
+			button10.style.cursor = "pointer";
+			button10.addEventListener("click", () => {
+				input.value = "take"
+				if(selection.length > 0)
+				{
+					input.value += " " + selection;
+					ifTake = "yes"
+					Select1();
+				}
+				clickHandler();
+			});
+			
+			var button11 = document.querySelector("#button11");
+			button11.style.cursor = "pointer";
+			button11.addEventListener("click", () => {
+				input.value = "drop"
+				if(selection.length > 0)
+				{
+					input.value += " " + selection;
+					ifDrop = "yes"
+					Select2();
+				}
+				clickHandler();
+			});
+			
+			var button12 = document.querySelector("#button12");
+			button12.style.cursor = "pointer";
+			button12.addEventListener("click", () => {
+				document.getElementById("input").style.display = "block";
+				document.getElementById("button1").style.display = "block";
+				render();
+			});
+			
+			var button13 = document.querySelector("#button13");
+			button13.style.cursor = "pointer";
+			button13.addEventListener("click", () => {
+				document.getElementById("input").style.display = "none";
+				document.getElementById("button1").style.display = "none";
+				render();
+			});
+			
+			var button14 = document.querySelector("#button14");
+			button14.style.cursor = "pointer";
+			button14.addEventListener("click", () => {
+				input.value = "look"
+				clickHandler();
+			});
+			
+			var button15 = document.querySelector("#button15");
+			button15.style.cursor = "pointer";
+			button15.addEventListener("click", () => {
+				input.value = "inventory"
+				clickHandler();
+			});
+			
+			var button16 = document.querySelector("#button16");
+			button16.style.cursor = "pointer";
+			button16.addEventListener("click", () => {
+				input.value = "help"
+				clickHandler();
+			});
+			
+			var button17 = document.querySelector("#button17");
+			button17.style.cursor = "pointer";
+			button17.addEventListener("click", () => {
+				input.value = "goal"
+				clickHandler();
+			});
+			
+			//Select room objects
+			var clickRoomObj1 = document.querySelector("#roomObj1");
+			clickRoomObj1.style.cursor = "pointer";
+			clickRoomObj1.addEventListener("click", () => {
+				Select1("roomObj1", 0);
+			});
+			
+			var clickRoomObj2 = document.querySelector("#roomObj2");
+			clickRoomObj2.style.cursor = "pointer";
+			clickRoomObj2.addEventListener("click", () => {
+				Select1("roomObj2", 1);
+			});
+			
+			var clickRoomObj3 = document.querySelector("#roomObj3");
+			clickRoomObj3.style.cursor = "pointer";
+			clickRoomObj3.addEventListener("click", () => {
+				Select1("roomObj3", 2);
+			});
+			
+			var clickRoomObj4 = document.querySelector("#roomObj4");
+			clickRoomObj4.style.cursor = "pointer";
+			clickRoomObj4.addEventListener("click", () => {
+				Select1("roomObj4", 3);
+			});
+			
+			var clickRoomObj5 = document.querySelector("#roomObj5");
+			clickRoomObj5.style.cursor = "pointer";
+			clickRoomObj5.addEventListener("click", () => {
+				Select1("roomObj5", 4);
+			});
+			
+			var clickRoomObj6 = document.querySelector("#roomObj6");
+			clickRoomObj6.style.cursor = "pointer";
+			clickRoomObj6.addEventListener("click", () => {
+				Select1("roomObj6", 5);
+			});
+			
+			var clickRoomObj7 = document.querySelector("#roomObj7");
+			clickRoomObj7.style.cursor = "pointer";
+			clickRoomObj7.addEventListener("click", () => {
+				Select1("roomObj7", 6);
+			});
+			
+			var clickRoomObj8 = document.querySelector("#roomObj8");
+			clickRoomObj8.style.cursor = "pointer";
+			clickRoomObj8.addEventListener("click", () => {
+				Select1("roomObj8", 7);
+			});
+			
+			var clickRoomObj9 = document.querySelector("#roomObj9");
+			clickRoomObj9.style.cursor = "pointer";
+			clickRoomObj9.addEventListener("click", () => {
+				Select1("roomObj9", 8);
+			});
+			
+			//Select inventory objects
+			var clickInvObj1 = document.querySelector("#invObj1");
+			clickInvObj1.style.cursor = "pointer";
+			clickInvObj1.addEventListener("click", () => {
+				Select2("invObj1", 0);
+			});
+			
+			var clickInvObj2 = document.querySelector("#invObj2");
+			clickInvObj2.style.cursor = "pointer";
+			clickInvObj2.addEventListener("click", () => {
+				Select2("invObj2", 1);
+			});
+			
+			var clickInvObj3 = document.querySelector("#invObj3");
+			clickInvObj3.style.cursor = "pointer";
+			clickInvObj3.addEventListener("click", () => {
+				Select2("invObj3", 2);
+			});
+			
+			var clickInvObj4 = document.querySelector("#invObj4");
+			clickInvObj4.style.cursor = "pointer";
+			clickInvObj4.addEventListener("click", () => {
+				Select2("invObj4", 3);
+			});
+			
+			var clickInvObj5 = document.querySelector("#invObj5");
+			clickInvObj5.style.cursor = "pointer";
+			clickInvObj5.addEventListener("click", () => {
+				Select2("invObj5", 4);
+			});
+			
+			var clickInvObj6 = document.querySelector("#invObj6");
+			clickInvObj6.style.cursor = "pointer";
+			clickInvObj6.addEventListener("click", () => {
+				Select2("invObj6", 5);
+			});
+			
+			var clickInvObj7 = document.querySelector("#invObj7");
+			clickInvObj7.style.cursor = "pointer";
+			clickInvObj7.addEventListener("click", () => {
+				Select2("invObj7", 6);
+			});
+			
+			var clickInvObj8 = document.querySelector("#invObj8");
+			clickInvObj8.style.cursor = "pointer";
+			clickInvObj8.addEventListener("click", () => {
+				Select2("invObj8", 7);
+			});
+			
+			var clickInvObj9 = document.querySelector("#invObj9");
+			clickInvObj9.style.cursor = "pointer";
+			clickInvObj9.addEventListener("click", () => {
+				Select2("invObj9", 8);
+			});
 			
 			//Main div button (mouse left-click) event
 			var Div1 = document.querySelector("#overlay1");
 			Div1.style.cursor = "pointer";
 			Div1.addEventListener("click", firstDiv, false);
 			
-			//input.addEventListener("keyup", function(event) {
-				//if (event.keyCode === 9) firstDiv();
-			//}); 
+			var Div2 = document.querySelector("#overlay2");
+			Div2.style.cursor = "pointer";
+			Div2.addEventListener("click", secondDiv, false);
+			
+			var Div3 = document.querySelector("#overlay3");
+			Div3.style.cursor = "pointer";
+			Div3.addEventListener("click", thirdDiv, false);
 			
 			//Enter key event
 			input.addEventListener("keyup", function(event) {
@@ -337,67 +691,154 @@
 			
 			//Up arrow key event
 			input.addEventListener("keyup", function(event) {
-				if (event.keyCode === 38) {  North(); }
+				if (event.keyCode === 38) {
+					input.value = "north"
+					clickHandler();
+				}
 			});
 			//Down arrow key event
 			input.addEventListener("keyup", function(event) {
-				if (event.keyCode === 40) { South(); }
+				if (event.keyCode === 40) {
+					input.value = "south"
+					clickHandler();
+				}
 			});
 			//Left arrow key event
 			input.addEventListener("keyup", function(event) {
-				if (event.keyCode === 37) { West(); }
+				if (event.keyCode === 37) {
+					input.value = "west"
+					clickHandler();
+				}
 			});
 			//Right arrow key event
 			input.addEventListener("keyup", function(event) {
-				if (event.keyCode === 39) { East(); }
+				if (event.keyCode === 39) {
+					input.value = "east"
+					clickHandler();
+				}
 			});
+			
+			//select for room objects
+			function Select1(pass1, pass2)
+			{
+				if(ifTake === "yes")
+				{
+					document.getElementById(prevSelection).style.backgroundColor = "white";
+				}
+				else
+				{
+					console.log("pass1 : " + pass1);
+					console.log("pass2 : " + pass2);
+					if(selection.length > 0)
+					{
+						if(prevSelection === pass1)
+						{
+							document.getElementById(pass1).style.backgroundColor = "white";
+							gameMessage = "You unselect " + selection;
+							selection = ""
+							prevSelection = "";
+							render();
+						}
+						else{
+							document.getElementById(prevSelection).style.backgroundColor = "white";
+							document.getElementById(pass1).style.backgroundColor = "lightblue";
+							selection = objects1[mapLocation][pass2];
+							prevSelection = pass1;
+							gameMessage = "You select " + selection;
+							render();
+							console.log("prevSelection: " + prevSelection);
+							console.log("selection: " + selection);
+						}
+					}
+					else
+					{
+						document.getElementById(pass1).style.backgroundColor = "lightblue";
+						selection = objects1[mapLocation][pass2];
+						prevSelection = pass1;
+						gameMessage = "You select " + selection;
+						render();
+						console.log("prevSelection: " + prevSelection);
+						console.log("selection: " + selection);
+					}
+				}
+			}
+			
+			//select for inventory objects
+			function Select2(pass1, pass2)
+			{
+				if(ifDrop === "yes")
+				{
+					document.getElementById(prevSelection).style.backgroundColor = "white";
+				}
+				else
+				{
+					console.log("pass1 : " + pass1);
+					console.log("pass2 : " + pass2);
+					if(selection.length > 0)
+					{
+						if(prevSelection === pass1)
+						{
+							document.getElementById(pass1).style.backgroundColor = "white";
+							gameMessage = "You unselect " + selection;
+							selection = ""
+							prevSelection = "";
+							render();
+						}
+						else{
+							document.getElementById(prevSelection).style.backgroundColor = "white";
+							document.getElementById(pass1).style.backgroundColor = "lightblue";
+							selection = inventory1[pass2];
+							prevSelection = pass1;
+							gameMessage = "You select " + selection;
+							render();
+							console.log("prevSelection: " + prevSelection);
+							console.log("selection: " + selection);
+						}
+					}
+					else
+					{
+						document.getElementById(pass1).style.backgroundColor = "lightblue";
+						selection = inventory1[pass2];
+						prevSelection = pass1;
+						gameMessage = "You select " + selection;
+						render();
+						console.log("prevSelection: " + prevSelection);
+						console.log("selection: " + selection);
+					}
+				}
+			}
 			
 			//Display the player's location
 			render();
 			
-			function North()
-			{
-				input.value = "north";
-				clickHandler();
-			}
-			function South()
-			{
-				input.value = "south";
-				clickHandler();
-			}
-			function West()
-			{
-				input.value = "west";
-				clickHandler();
-			}
-			function East()
-			{
-				input.value = "east";
-				clickHandler();
-			}
-			function TakeAll()
-			{
-				input.value = "take all";
-				clickHandler();
-			}
-			function DropAll()
-			{
-				input.value = "drop all";
-				clickHandler();
-			}
 			function DeleteOrBackspace()
 			{
-				action = ""; //
-				chkAction = ""; //
-				origAction = ""; //
-				countOrigAction = 0; //
-				commands = []; //
-				chkcommands = 0; //
+				action = "";
+				chkAction = "";
+				origAction = "";
+				countOrigAction = 0;
+				commands = [];
+				chkcommands = 0;
+				selection = "";
+				prevSelection = "";
+				ifTake = "no"
+				ifDrop = "no";
 			}
 			
 			function firstDiv()
 			{
 				document.getElementById("overlay1").style.display = "none";
+				document.getElementById("overlay2").style.display = "block";
+				render();
+			}
+			function secondDiv()
+			{
+				document.getElementById("overlay2").style.display = "none";
+				render();
+			}
+			function thirdDiv()
+			{
+				document.getElementById("overlay3").style.display = "none";
 				render();
 			}
 			
@@ -454,27 +895,41 @@
 			
 			function locationAbandon()
 			{
-				document.getElementById("overlay2").style.display = "none";
+				document.getElementById("overlay4").style.display = "none";
 				document.getElementById("main").style.display = "none";
 			}
 			
 			function clickHandler()
 			{
-				action = ""; //
-				chkAction = ""; //
-				origAction = ""; //
-				countOrigAction = 0; //
-				commands = []; //
-				chkcommands = 0; //
+				action = "";
+				chkAction = "";
+				origAction = "";
+				countOrigAction = 0;
+				commands = [];
+				chkcommands = 0;
+				selection = "";
+				prevSelection = "";
+				ifTake = "no"
+				ifDrop = "no";
 				playGame();
 			}
 			function goal()
 			{
-				gameMessage = "Every room has a key of its own name inside of it.\n";
+				document.getElementById("overlay2").style.display = "block";
+				/*gameMessage = "Every room has a key of its own name inside of it.\n";
 				gameMessage += "Goal of the game is to reverse the keys in opposition to the room names.\n";
 				gameMessage += "The one key that can't be opposed must be in your posesion.\n\n";
 				gameMessage += "Type help for help!";
-				return gameMessage;
+				return gameMessage;*/
+			}
+			function help()
+			{
+				document.getElementById("overlay3").style.display = "block";
+				/*gameMessage = "Every room has a key of its own name inside of it.\n";
+				gameMessage += "Goal of the game is to reverse the keys in opposition to the room names.\n";
+				gameMessage += "The one key that can't be opposed must be in your posesion.\n\n";
+				gameMessage += "Type help for help!";
+				return gameMessage;*/
 			}
 			function playGame()
 			{
@@ -535,7 +990,8 @@
 					}
 					case "help":
 					{
-						gameMessage = "Here is a list of commands you can try:\n\n";
+						help();
+						/*gameMessage = "Here is a list of commands you can try:\n\n";
 						gameMessage += "help - returns all available commands\n";
 						gameMessage += "goal - returns goal of the game\n";
 						gameMessage += "diary - returns all commands you tried\n";
@@ -550,7 +1006,7 @@
 						gameMessage += "north - tries to go north\n";
 						gameMessage += "south - tries to go south\n";
 						gameMessage += "east - tries to go east\n";
-						gameMessage += "west - tries to go west\n";
+						gameMessage += "west - tries to go west\n";*/
 						break;
 					}
 					case "diary":
@@ -582,7 +1038,7 @@
 					}
 					case "goal":
 					{
-						goal(gameMessage);
+						goal();
 						break;
 					}
 					case "!!!admtake":
@@ -869,7 +1325,7 @@
 				if(mapLocation === 8) images2[8] = "New_maps/room009.png";
 				
 				progCount = 0;
-				for(counter1 = 0; counter1 < 9; counter1 ++)
+				for(counter1 = 0; counter1 < maps1.length; counter1 ++)
 				{
 					if(objects1[0][counter1] === "key9")
 						progCount += 1;
@@ -891,7 +1347,7 @@
 						progCount += 1;
 				}
 				
-				for(counter1 = 0; counter1 < 9; counter1 ++)
+				for(counter1 = 0; counter1 < maps1.length; counter1 ++)
 				{
 					if(counter1 < progCount)
 						progress1[counter1] = "green";
@@ -900,7 +1356,7 @@
 				}
 				
 				if(progCount === 9)
-					document.getElementById("overlay2").style.display = "block";
+					document.getElementById("overlay4").style.display = "block";
 				
 				//Clears input
 				document.getElementById("input").value = "";
@@ -918,70 +1374,51 @@
 				
 				//Updates paragraph id - output with - output variable
 				document.getElementById('output').innerText = maps1[mapLocation];
-				document.getElementById('roomObj').innerText = ""
-				document.getElementById('invObj').innerText = ""
-				for(counter1 = 0; counter1 < 9; counter1++)
+				
+				//This autopopulates room with objects
+				//This autopopulates inventory with objects
+				for(counter1 = 0; counter1 < maps1.length; counter1++)
 				{
+					temp1 = "roomObj" + Number(counter1+1);
+					temp2 = "invObj" + Number(counter1+1);
+					
 					if(objects1[mapLocation][counter1])
 					{
-						document.getElementById('roomObj').innerText += objects1[mapLocation][counter1] + "\n";
+						document.getElementById(temp1).innerText = objects1[mapLocation][counter1];
+						document.getElementById(temp1).style.display = "block";
+						document.getElementById(temp1).style.border = "1px solid gray";
 					}
-					else
+					if(!objects1[mapLocation][counter1])
 					{
-						document.getElementById('roomObj').innerText += "-\n";
+						document.getElementById(temp1).style.backgroundColor = "white";
+						document.getElementById(temp1).style.display = "none";
 					}
-				}
-				for(counter1 = 0; counter1 < 9; counter1++)
-				{
 					if(inventory1[counter1])
 					{
-						document.getElementById('invObj').innerText += inventory1[counter1] + "\n";
+						document.getElementById(temp2).innerText = inventory1[counter1];
+						document.getElementById(temp2).style.display = "block";
+						document.getElementById(temp2).style.border = "1px solid gray";
 					}
-					else
+					if(!inventory1[counter1])
 					{
-						document.getElementById('invObj').innerText += "-\n";
+						document.getElementById(temp2).style.backgroundColor = "white";
+						document.getElementById(temp2).style.display = "none";
 					}
 				}
-				//document.getElementById('roomObj').innerText = objects1[mapLocation][0] + "\n";
-				//document.getElementById('roomObj').innerText += objects1[mapLocation][1] + "\n";
-				//document.getElementById('roomObj').innerText += objects1[mapLocation][2] + "\n";
-				//document.getElementById('roomObj').innerText += objects1[mapLocation][3] + "\n";
-				//document.getElementById('roomObj').innerText += objects1[mapLocation][4] + "\n";
-				//document.getElementById('roomObj').innerText += objects1[mapLocation][5] + "\n";
-				//document.getElementById('roomObj').innerText += objects1[mapLocation][6] + "\n";
-				//document.getElementById('roomObj').innerText += objects1[mapLocation][7] + "\n";
-				//document.getElementById('roomObj').innerText += objects1[mapLocation][8] + "\n";
+				temp1 = "";
+				temp2 = "";
 				
-				//image1.src = images1[mapLocation];
-				
-				image001.src = images2[0];
-				image002.src = images2[1];
-				image003.src = images2[2];
-				image004.src = images2[3];
-				image005.src = images2[4];
-				image006.src = images2[5];
-				image007.src = images2[6];
-				image008.src = images2[7];
-				image009.src = images2[8];
-				
-				document.getElementById('div1');
-				div1.style.backgroundColor = progress1[0];
-				document.getElementById('div2');
-				div2.style.backgroundColor = progress1[1];
-				document.getElementById('div3');
-				div3.style.backgroundColor = progress1[2];
-				document.getElementById('div4');
-				div4.style.backgroundColor = progress1[3];
-				document.getElementById('div5');
-				div5.style.backgroundColor = progress1[4];
-				document.getElementById('div6');
-				div6.style.backgroundColor = progress1[5];
-				document.getElementById('div7');
-				div7.style.backgroundColor = progress1[6];
-				document.getElementById('div8');
-				div8.style.backgroundColor = progress1[7];
-				document.getElementById('div9');
-				div9.style.backgroundColor = progress1[8];
+				//This images on the map and divs in the progress bar
+				for(counter1 = 0; counter1 < maps1.length; counter1++)
+				{
+					temp1 = "image" + Number(counter1+1);
+					temp2 = "div" + Number(counter1+1);
+					
+					document.getElementById(temp1).src = images2[counter1];
+					document.getElementById(temp2).style.backgroundColor = progress1[counter1];
+				}
+				temp1 = "";
+				temp2 = "";
 				
 				//Display the game message
 				//output.innerHTML += "<br><em>" + gameMessage + "</em>";
@@ -989,7 +1426,7 @@
 				//Updates paragraph id - game message with - gameMessage variable
 				document.getElementById('game message').innerText = gameMessage;
 				
-				if(document.getElementById("overlay1").style.display === "none")
+				if(document.getElementById("input").style.display === "block")
 				{
 					if(input.value.length === 0)
 					{
