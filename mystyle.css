@@ -1,0 +1,162 @@
+body
+{
+	margin:0px;
+	padding:0px;
+	/*max-width:1000px;*/
+	color:black;
+	font-family:"Times New Roman";
+	font-size:16px;
+	text-align:left;
+}
+#main
+{
+	float:none;
+	border:1px solid gray;
+	width:616px;
+	height:572px;
+}
+#twotowers1
+{
+	float:left;
+	border:1px solid gray;
+	width:306px;
+	height:490px;
+}
+#twotowers2
+{
+	float:left;
+	border:1px solid gray;
+	width:151px;
+	height:306px;
+}
+#twotowers3
+{
+	float:left;
+	border:1px solid gray;
+	width:151px;
+	height:158px;
+}
+#cells1
+{
+	float:left;
+	border:1px solid white;
+	width:149px;
+	height:25px;
+}
+#cells2
+{
+	float:left;
+	border:1px solid white;
+	width:149px;
+	height:50px;
+}
+#h1, #h2, #h3, #h4
+{
+	padding:0px;
+	text-align:center;
+}
+p
+{
+	margin:0px;
+	padding:0px;
+	font-size:16px;
+}
+#overlay1, #overlay2, #overlay3, #overlay4
+{
+	margin:0px;
+	border:1px solid white;
+	position:fixed;
+	width:618px;
+	height:570px;
+	background-color:rgba(0,0,0,0.8);
+}
+#image1, #image2, #image3, #image4, #image5, #image6, #image7, #image8, #image9
+{
+	border:1px solid gray;
+	float:left;
+	width:99px;
+	height:100px;
+}
+#div1, #div2, #div3, #div4, #div5, #div6, #div7, #div8, #div9
+{
+	border:1px solid white;
+	float:left;
+	background-color:red;
+	width:66px;
+	height:23px;
+}
+#roomObj1, #roomObj2, #roomObj3, #roomObj4, #roomObj5, #roomObj6, #roomObj7, #roomObj8, #roomObj9, #invObj1, #invObj2, #invObj3, #invObj4, #invObj5, #invObj6, #invObj7, #invObj8, #invObj9
+{
+	border:1px solid gray;
+	float:left;
+	text-align:center;
+	width:48px;
+	height:32px;
+}
+#obj1
+{
+	border:1px solid white;
+	float:left;
+	text-align:center;
+	width:48px;height:32px;"
+}
+#button1, #button2, #button3
+{
+	border:1px solid gray;
+	height:25px;
+	width:50px;
+	background-color:lightgray;
+	text-align:center;
+}
+#button4, #button5, #button6, #button7
+{
+	border:1px solid gray;
+	height:20px;
+	width:45px;
+	background-color:lightgreen;
+	text-align:center;
+}
+#button8, #button9
+{
+	margin-left:35px;
+	border:1px solid gray;
+	height:20px;
+	width:80px;
+	background-color:lightblue;
+	text-align:center;
+}
+#button10, #button11
+{
+	border:1px solid gray;
+	height:20px;
+	width:50px;
+	background-color:lightgray;
+	text-align:center;
+}
+#button12, #button13
+{
+	margin-left:25px;
+	border:1px solid gray;
+	height:20px;
+	width:100px;
+	background-color:orange;
+	text-align:center;
+}
+#button14, #button15
+{
+	float:left;
+	border:1px solid gray;
+	height:20px;
+	width:153px;
+	background-color:lightgray;
+	text-align:center;
+}
+#button16, #button17
+{
+	margin-left:51px;
+	border:1px solid gray;
+	height:20px;
+	width:50px;
+	background-color:yellow;
+	text-align:center;
+}
