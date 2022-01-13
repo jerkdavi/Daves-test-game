@@ -783,7 +783,7 @@ function start()
 			case "look":
 			{
 				if(objects1[mapLocation].length != 0 )
-					gameMessage = "You can see " + objects1[mapLocation] + " lying on the floor.";
+					gameMessage = "You can see " + objects1[mapLocation] + " lying on the floor in " + maps1[mapLocation];
 				else
 					gameMessage = "There is nothing on the floor";
 				break;
