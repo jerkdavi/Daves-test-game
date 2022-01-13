@@ -218,7 +218,6 @@ function start()
 	button12.addEventListener("click", () => {
 		document.getElementById("input").style.display = "block";
 		document.getElementById("button1").style.display = "block";
-		render();
 	});
 	
 	var button13 = document.querySelector("#button13");
@@ -226,7 +225,6 @@ function start()
 	button13.addEventListener("click", () => {
 		document.getElementById("input").style.display = "none";
 		document.getElementById("button1").style.display = "none";
-		render();
 	});
 	
 	var button14 = document.querySelector("#button14");
@@ -631,6 +629,8 @@ function start()
 	function goal()
 	{
 		document.getElementById("overlay2").style.display = "block";
+		heading = "Use arrow keys or buttons to move on the map.\n\nEvery room has a key of its own name inside of it.\n\nGoal of the game is to reverse the keys in opposition to the room names.\n"
+		heading += "The one key that can't be opposed must be in your posesion.\n\nType help for help!"
 		/*gameMessage = "Every room has a key of its own name inside of it.\n";
 		gameMessage += "Goal of the game is to reverse the keys in opposition to the room names.\n";
 		gameMessage += "The one key that can't be opposed must be in your posesion.\n\n";
