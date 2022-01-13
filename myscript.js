@@ -149,6 +149,10 @@ function start()
 	button4.style.cursor = "pointer";
 	button4.addEventListener("click", () => {
 		input.value = "north"
+		ifTake = "yes"
+		ifDrop = "yes"
+		Select1();
+		Select2();
 		clickHandler();
 	});
 	
@@ -156,6 +160,10 @@ function start()
 	button5.style.cursor = "pointer";
 	button5.addEventListener("click", () => {
 		input.value = "south"
+		ifTake = "yes"
+		ifDrop = "yes"
+		Select1();
+		Select2();
 		clickHandler();
 	});
 	
@@ -163,6 +171,10 @@ function start()
 	button6.style.cursor = "pointer";
 	button6.addEventListener("click", () => {
 		input.value = "west"
+		ifTake = "yes"
+		ifDrop = "yes"
+		Select1();
+		Select2();
 		clickHandler();
 	});
 	
@@ -170,6 +182,10 @@ function start()
 	button7.style.cursor = "pointer";
 	button7.addEventListener("click", () => {
 		input.value = "east"
+		ifTake = "yes"
+		ifDrop = "yes"
+		Select1();
+		Select2();
 		clickHandler();
 	});
 	
@@ -412,6 +428,10 @@ function start()
 	input.addEventListener("keyup", function(event) {
 		if (event.keyCode === 38) {
 			input.value = "north"
+			ifTake = "yes"
+			ifDrop = "yes"
+			Select1();
+			Select2();
 			clickHandler();
 		}
 	});
@@ -419,6 +439,10 @@ function start()
 	input.addEventListener("keyup", function(event) {
 		if (event.keyCode === 40) {
 			input.value = "south"
+			ifTake = "yes"
+			ifDrop = "yes"
+			Select1();
+			Select2();
 			clickHandler();
 		}
 	});
@@ -426,6 +450,10 @@ function start()
 	input.addEventListener("keyup", function(event) {
 		if (event.keyCode === 37) {
 			input.value = "west"
+			ifTake = "yes"
+			ifDrop = "yes"
+			Select1();
+			Select2();
 			clickHandler();
 		}
 	});
@@ -433,6 +461,10 @@ function start()
 	input.addEventListener("keyup", function(event) {
 		if (event.keyCode === 39) {
 			input.value = "east"
+			ifTake = "yes"
+			ifDrop = "yes"
+			Select1();
+			Select2();
 			clickHandler();
 		}
 	});
@@ -442,7 +474,8 @@ function start()
 	{
 		if(ifTake === "yes")
 		{
-			document.getElementById(prevSelection).style.backgroundColor = "white";
+			if(prevSelection)
+				document.getElementById(prevSelection).style.backgroundColor = "white";
 		}
 		else
 		{
@@ -481,7 +514,8 @@ function start()
 	{
 		if(ifDrop === "yes")
 		{
-			document.getElementById(prevSelection).style.backgroundColor = "white";
+			if(prevSelection)
+				document.getElementById(prevSelection).style.backgroundColor = "white";
 		}
 		else
 		{
@@ -1101,6 +1135,7 @@ function start()
 		
 		//Updates paragraph id - output with - output variable
 		document.getElementById('output').innerText = maps1[mapLocation];
+		document.getElementById('button14').innerText = maps1[mapLocation];
 		
 		//This autopopulates room with objects
 		//This autopopulates inventory with objects
