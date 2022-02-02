@@ -1,0 +1,123 @@
+#body
+{
+	margin:30px 0px 0px 0px;
+	padding:0px;
+	display:flex;
+	align-items: center;
+    justify-content: center;
+	font-family:"Times New Roman";
+	font-size:16px;
+	text-align:left;
+}
+#body1
+{
+	margin:0px;
+	width:752px;
+	height:689px;
+}
+#body2
+{
+	margin:0px;
+	width:750px;
+	height:635px;
+}
+.half1
+{
+	float:left;
+	margin:0px;
+	width:373px;
+	height:48px;
+}
+.half2
+{
+	float:left;
+	margin:20px 0px 0px 20px;
+	width:200px;
+	height:25px;
+	border:1px solid white;
+}
+.half3
+{
+	float:left;
+	margin:20px 0px 0px 20px;
+	width:200px;
+	height:25px;
+	border:1px solid lightgray;
+}
+
+.wholehalf1
+{
+	float:left;
+	margin:0px;
+	width:222px;
+	height:635px;
+}
+#input1, #input2, #input3, #input4, #input5, #input6, #input12
+{
+	float:left;
+	border:1px solid white;
+	width:194px;
+	height:21px;
+}
+.header1
+{
+	margin:0px;
+	width:750px;
+	height:50px;
+}
+#middle
+{
+	margin:0px;
+	width:752px;
+	height:587px;
+}
+#overlay1, #overlay2, #overlay4
+{
+	margin:0px;
+	position:fixed;
+	width:752px;
+	height:689px;
+	background-color:rgba(255,255,255,0.8);
+}
+#h1, #h4
+{
+	margin:0px;
+	padding:0px;
+	text-align:center;
+}
+p
+{
+	margin:5px 0px 0px 0px;
+	padding:0px;
+	text-align:center;
+}
+.player1, .player2
+{
+	margin:0px;
+	padding:0px;
+	text-align:center;
+	width:371px;
+	height:22px;
+}
+#score1, #score2, #highscore1, #highscore2
+{
+	margin:0px;
+	padding:0px;
+	text-align:center;
+	width:371px;
+	height:22px;
+}
+#button2, #button3, #button5, #button6
+{
+	border:1px solid gray;
+	height:25px;
+	width:50px;
+	text-align:center;
+}
+#button1, #button4
+{
+	border:1px solid gray;
+	height:25px;
+	width:80px;
+	text-align:center;
+}
