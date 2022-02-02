@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 //Clears all localStorage
 localStorage.clear();
 
@@ -148,9 +149,9 @@ function start()
 	var button4 = document.querySelector("#button4");
 	button4.style.cursor = "pointer";
 	button4.addEventListener("click", () => {
-		input.value = "north"
-		ifTake = "yes"
-		ifDrop = "yes"
+		input.value = "north";
+		ifTake = "yes";
+		ifDrop = "yes";
 		Select1();
 		Select2();
 		clickHandler();
@@ -159,9 +160,9 @@ function start()
 	var button5 = document.querySelector("#button5");
 	button5.style.cursor = "pointer";
 	button5.addEventListener("click", () => {
-		input.value = "south"
-		ifTake = "yes"
-		ifDrop = "yes"
+		input.value = "south";
+		ifTake = "yes";
+		ifDrop = "yes";
 		Select1();
 		Select2();
 		clickHandler();
@@ -170,9 +171,9 @@ function start()
 	var button6 = document.querySelector("#button6");
 	button6.style.cursor = "pointer";
 	button6.addEventListener("click", () => {
-		input.value = "west"
-		ifTake = "yes"
-		ifDrop = "yes"
+		input.value = "west";
+		ifTake = "yes";
+		ifDrop = "yes";
 		Select1();
 		Select2();
 		clickHandler();
@@ -181,9 +182,9 @@ function start()
 	var button7 = document.querySelector("#button7");
 	button7.style.cursor = "pointer";
 	button7.addEventListener("click", () => {
-		input.value = "east"
-		ifTake = "yes"
-		ifDrop = "yes"
+		input.value = "east";
+		ifTake = "yes";
+		ifDrop = "yes";
 		Select1();
 		Select2();
 		clickHandler();
@@ -192,25 +193,25 @@ function start()
 	var button8 = document.querySelector("#button8");
 	button8.style.cursor = "pointer";
 	button8.addEventListener("click", () => {
-		input.value = "take all"
+		input.value = "take all";
 		clickHandler();
 	});
 	
 	var button9 = document.querySelector("#button9");
 	button9.style.cursor = "pointer";
 	button9.addEventListener("click", () => {
-		input.value = "drop all"
+		input.value = "drop all";
 		clickHandler();
 	});
 	
 	var button10 = document.querySelector("#button10");
 	button10.style.cursor = "pointer";
 	button10.addEventListener("click", () => {
-		input.value = "take"
+		input.value = "take";
 		if(selection.length > 0)
 		{
 			input.value += " " + selection;
-			ifTake = "yes"
+			ifTake = "yes";
 			Select1();
 		}
 		clickHandler();
@@ -219,11 +220,11 @@ function start()
 	var button11 = document.querySelector("#button11");
 	button11.style.cursor = "pointer";
 	button11.addEventListener("click", () => {
-		input.value = "drop"
+		input.value = "drop";
 		if(selection.length > 0)
 		{
 			input.value += " " + selection;
-			ifDrop = "yes"
+			ifDrop = "yes";
 			Select2();
 		}
 		clickHandler();
@@ -246,28 +247,28 @@ function start()
 	var button14 = document.querySelector("#button14");
 	button14.style.cursor = "pointer";
 	button14.addEventListener("click", () => {
-		input.value = "look"
+		input.value = "look";
 		clickHandler();
 	});
 	
 	var button15 = document.querySelector("#button15");
 	button15.style.cursor = "pointer";
 	button15.addEventListener("click", () => {
-		input.value = "inventory"
+		input.value = "inventory";
 		clickHandler();
 	});
 	
 	var button16 = document.querySelector("#button16");
 	button16.style.cursor = "pointer";
 	button16.addEventListener("click", () => {
-		input.value = "help"
+		input.value = "help";
 		clickHandler();
 	});
 	
 	var button17 = document.querySelector("#button17");
 	button17.style.cursor = "pointer";
 	button17.addEventListener("click", () => {
-		input.value = "goal"
+		input.value = "goal";
 		clickHandler();
 	});
 	
@@ -427,9 +428,9 @@ function start()
 	//Up arrow key event
 	input.addEventListener("keyup", function(event) {
 		if (event.keyCode === 38) {
-			input.value = "north"
-			ifTake = "yes"
-			ifDrop = "yes"
+			input.value = "north";
+			ifTake = "yes";
+			ifDrop = "yes";
 			Select1();
 			Select2();
 			clickHandler();
@@ -438,9 +439,9 @@ function start()
 	//Down arrow key event
 	input.addEventListener("keyup", function(event) {
 		if (event.keyCode === 40) {
-			input.value = "south"
-			ifTake = "yes"
-			ifDrop = "yes"
+			input.value = "south";
+			ifTake = "yes";
+			ifDrop = "yes";
 			Select1();
 			Select2();
 			clickHandler();
@@ -449,9 +450,9 @@ function start()
 	//Left arrow key event
 	input.addEventListener("keyup", function(event) {
 		if (event.keyCode === 37) {
-			input.value = "west"
-			ifTake = "yes"
-			ifDrop = "yes"
+			input.value = "west";
+			ifTake = "yes";
+			ifDrop = "yes";
 			Select1();
 			Select2();
 			clickHandler();
@@ -460,9 +461,9 @@ function start()
 	//Right arrow key event
 	input.addEventListener("keyup", function(event) {
 		if (event.keyCode === 39) {
-			input.value = "east"
-			ifTake = "yes"
-			ifDrop = "yes"
+			input.value = "east";
+			ifTake = "yes";
+			ifDrop = "yes";
 			Select1();
 			Select2();
 			clickHandler();
@@ -485,7 +486,7 @@ function start()
 				{
 					document.getElementById(pass1).style.backgroundColor = "white";
 					gameMessage = "You unselect " + selection;
-					selection = ""
+					selection = "";
 					prevSelection = "";
 					render();
 				}
@@ -525,7 +526,7 @@ function start()
 				{
 					document.getElementById(pass1).style.backgroundColor = "white";
 					gameMessage = "You unselect " + selection;
-					selection = ""
+					selection = "";
 					prevSelection = "";
 					render();
 				}
@@ -562,7 +563,7 @@ function start()
 		chkcommands = 0;
 		selection = "";
 		prevSelection = "";
-		ifTake = "no"
+		ifTake = "no";
 		ifDrop = "no";
 	}
 	
@@ -570,8 +571,8 @@ function start()
 	{
 		document.getElementById("overlay1").style.display = "none";
 		document.getElementById("overlay2").style.display = "block";
-		heading = "Use arrow keys or buttons to move on the map.\n\nEvery room has a key of its own name inside of it.\n\nGoal of the game is to reverse the keys in opposition to the room names.\n"
-		heading += "The one key that can't be opposed must be in your posesion.\n\nType help for help!"
+		heading = "Use arrow keys or buttons to move on the map.\n\nEvery room has a key of its own name inside of it.\n\nGoal of the game is to reverse the keys in opposition to the room names.\n";
+		heading += "The one key that can't be opposed must be in your posesion.\n\nType help for help!";
 		render();
 	}
 	function secondDiv()
@@ -598,7 +599,7 @@ function start()
 		{
 			for(counter1 = 0; counter1 < actionsIKnow.length; counter1++)
 			{
-				chkAction = actionsIKnow[counter1].slice(0, origAction.length)
+				chkAction = actionsIKnow[counter1].slice(0, origAction.length);
 				if(origAction === chkAction)
 				{
 					if(actionsIKnow[counter1] === "!!!admtake"){}
@@ -656,15 +657,15 @@ function start()
 		chkcommands = 0;
 		selection = "";
 		prevSelection = "";
-		ifTake = "no"
+		ifTake = "no";
 		ifDrop = "no";
 		playGame();
 	}
 	function goal()
 	{
 		document.getElementById("overlay2").style.display = "block";
-		heading = "Use arrow keys or buttons to move on the map.\n\nEvery room has a key of its own name inside of it.\n\nGoal of the game is to reverse the keys in opposition to the room names.\n"
-		heading += "The one key that can't be opposed must be in your posesion.\n\nType help for help!"
+		heading = "Use arrow keys or buttons to move on the map.\n\nEvery room has a key of its own name inside of it.\n\nGoal of the game is to reverse the keys in opposition to the room names.\n";
+		heading += "The one key that can't be opposed must be in your posesion.\n\nType help for help!";
 		/*gameMessage = "Every room has a key of its own name inside of it.\n";
 		gameMessage += "Goal of the game is to reverse the keys in opposition to the room names.\n";
 		gameMessage += "The one key that can't be opposed must be in your posesion.\n\n";
@@ -674,9 +675,9 @@ function start()
 	function help()
 	{
 		document.getElementById("overlay3").style.display = "block";
-		heading = "Here is a list of commands you can try:\n\nhelp - returns all available commands\ngoal - returns goal of the game\ndiary - returns all commands you tried\nclrdiary - clears all entries from diary\n"
-		heading += "reset - restarts the game\nlook - looks around the room\ntake object name - takes object from room\ntake all - take all objects from room\ndrop object name - drops object in room\n"
-		heading += "drop all - drops all objects in room\ninventory - displays contents of your inventory\n\nnorth - tries to go north\nsouth - tries to go south\neast - tries to go east\nwest - tries to go west"
+		heading = "Here is a list of commands you can try:\n\nhelp - returns all available commands\ngoal - returns goal of the game\ndiary - returns all commands you tried\nclrdiary - clears all entries from diary\n";
+		heading += "reset - restarts the game\nlook - looks around the room\ntake object name - takes object from room\ntake all - take all objects from room\ndrop object name - drops object in room\n";
+		heading += "drop all - drops all objects in room\ninventory - displays contents of your inventory\n\nnorth - tries to go north\nsouth - tries to go south\neast - tries to go east\nwest - tries to go west";
 		/*gameMessage = "Every room has a key of its own name inside of it.\n";
 		gameMessage += "Goal of the game is to reverse the keys in opposition to the room names.\n";
 		gameMessage += "The one key that can't be opposed must be in your posesion.\n\n";
@@ -1116,7 +1117,7 @@ function start()
 		if(progCount === 9)
 		{
 			document.getElementById("overlay4").style.display = "block";
-			heading = "Congratulation on completing the game!\n\nDo you want to play again?"
+			heading = "Congratulation on completing the game!\n\nDo you want to play again?";
 		}
 		
 		//Clears input
@@ -1186,7 +1187,7 @@ function start()
 		//output.innerHTML += "<br><em>" + gameMessage + "</em>";
 		
 		//Updates paragraph id - game message with - gameMessage variable
-		document.getElementById('game message').innerText = gameMessage;
+		document.getElementById('gameMessage').innerText = gameMessage;
 		document.getElementById('h1').innerText = heading;
 		document.getElementById('h2').innerText = heading;
 		document.getElementById('h3').innerText = heading;
