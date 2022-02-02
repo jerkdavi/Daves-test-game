@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Pong</title>
+	<link rel="stylesheet" href="Pong.css">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+</head>
+<body id="body">
+	<div id="overlay1">
+		<h1 id="h1">&nbsp;</h1>
+		<button id="button1">Settings</button>
+		<button id="button2">Start</button>
+	</div>
+	<div id="overlay2">
+		<div id="body2">
+			<div class="wholehalf1">
+				<div class="half2">
+					<p>Player 1 Name: </p>
+				</div>
+				<div class="half2">
+					<p>Player 2 Name: </p>
+				</div>
+				<div class="half2">
+					<p>Ball speed: </p>
+				</div>
+				<div class="half2">
+					<p>Paddle speed: </p>
+				</div>
+				<div class="half2">
+					<p>Win score: </p>
+				</div>
+				<div class="half2">
+					<p>Paddle size: </p>
+				</div>
+				<div class="half2">
+					<p>First player to play: </p>
+				</div>
+				<div class="half2">
+					<p>Background color: </p>
+				</div>
+				<div class="half2">
+					<p>Text color: </p>
+				</div>
+				<div class="half2">
+					<p>Walls color: </p>
+				</div>
+				<div class="half2">
+					<p>Paddle color: </p>
+				</div>
+				<div class="half2">
+					<p>Ball color: </p>
+				</div>
+				<button id="button5">Reset</button>
+			</div>
+			<div class="wholehalf1">
+				<div class="half2">
+					<input id="input1" type="text">
+				</div>
+				<div class="half2">
+					<input id="input2" type="text">
+				</div>
+				<div class="half2">
+					<input type="number" name="input3" id="input3" min="1" max="9" step="1" value="5">
+				</div>
+				<div class="half2">
+					<input type="number" name="input4" id="input4" min="2" max="10" step="1" value="6">
+				</div>
+				<div class="half2">
+					<input type="number" name="input5" id="input5" min="3" max="100" step="1" value="10">
+				</div>
+				<div class="half2">
+					<input type="number" name="input6" id="input6" min="60" max="100" step="1" value="80">
+				</div>
+				<div class="half2">
+					<input type="number" name="input12" id="input12" min="1" max="2" step="1" value="2">
+				</div>
+				<div class="half3">
+					<input type="color" name="input7" id="input7" value="#000000">
+				</div>
+				<div class="half3">
+					<input type="color" name="input8" id="input8" value="#FFFFFF">
+				</div>
+				<div class="half3">
+					<input type="color" name="input9" id="input9" value="#d3d3d3">
+				</div>
+				<div class="half3">
+					<input type="color" name="input11" id="input11" value="#FFFFFF">
+				</div>
+				<div class="half3">
+					<input type="color" name="input10" id="input10" value="#d3d3d3">
+				</div>
+				<button id="button6">Save</button>
+			</div>
+		</div>
+	</div>
+	<div id="overlay4">
+		<h1 id="h4">&nbsp;</h1>
+		<button id="button4">Settings</button>
+		<button id="button3">Yes</button>
+	</div>
+	<div id="body1">
+		<div class="header1">
+			<div class="half1">
+				<p class="player1"></p>
+				<p id="score1"></p>
+			</div>
+			<div class="half1">
+				<p class="player2"></p>
+				<p id="score2"></p>
+			</div>
+		</div>
+		<div id ="middle">
+			<canvas width="750" height="585" id="game"></canvas>
+		</div>
+		<div class="header1">
+			<div class="half1">
+				<p class="player1" style="margin-top:10px;"></p>
+				<p id="highscore1"></p>
+			</div>
+			<div class="half1">
+				<p class="player2" style="margin-top:10px;"></p>
+				<p id="highscore2"></p>
+			</div>
+		</div>
+	</div>
+	<script src="Pong.js"></script>
+</body>
+</html>
