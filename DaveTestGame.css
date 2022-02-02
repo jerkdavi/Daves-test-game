@@ -15,35 +15,35 @@ body
 	width:616px;
 	height:572px;
 }
-#twotowers1
+.twotowers1
 {
 	float:left;
 	border:1px solid gray;
 	width:306px;
 	height:490px;
 }
-#twotowers2
+.twotowers2
 {
 	float:left;
 	border:1px solid gray;
 	width:151px;
 	height:306px;
 }
-#twotowers3
+.twotowers3
 {
 	float:left;
 	border:1px solid gray;
 	width:151px;
 	height:158px;
 }
-#cells1
+.cells1
 {
 	float:left;
 	border:1px solid white;
 	width:149px;
 	height:25px;
 }
-#cells2
+.cells2
 {
 	float:left;
 	border:1px solid white;
@@ -93,12 +93,12 @@ p
 	width:48px;
 	height:32px;
 }
-#obj1
+.obj1
 {
 	border:1px solid white;
 	float:left;
 	text-align:center;
-	width:48px;height:32px;"
+	width:48px;height:32px;
 }
 #button1, #button2, #button3
 {
