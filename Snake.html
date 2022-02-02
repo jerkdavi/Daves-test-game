@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Snake</title>
+	<link rel="stylesheet" href="Snake.css">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+</head>
+<body id="body">
+	<div id="overlay1">
+		<h1 id="h1">&nbsp;</h1>
+		<button id="button1">Settings</button>
+		<button id="button2">Start</button>
+	</div>
+	<div id="overlay2">
+		<div id="body2">
+			<div class="wholehalf1">
+				<div class="half2">
+					<p>Player Name: </p>
+				</div>
+				<div class="half2">
+					<p>Snake speed: </p>
+				</div>
+				<div class="half2">
+					<p>Crash in walls: </p>
+				</div>
+				<div class="half2">
+					<p>Crash in self: </p>
+				</div>
+				<div class="half2">
+					<p>Background color: </p>
+				</div>
+				<div class="half2">
+					<p>Text color: </p>
+				</div>
+				<div class="half2">
+					<p>Walls color: </p>
+				</div>
+				<div class="half2">
+					<p>Snake color: </p>
+				</div>
+				<div class="half2">
+					<p>Apple color: </p>
+				</div>
+				<button id="button5">Reset</button>
+			</div>
+			<div class="wholehalf1">
+				<div class="half2">
+					<input id="input1" type="text">
+				</div>
+				<div class="half2">
+					<input type="number" name="input3" id="input3" min="1" max="9" step="1" value="5">
+				</div>
+				<div class="half2">
+					<input type="radio" name="CrashInWall" id="input12" value="Yes" checked style="margin:5px 5px 0px 5px">Yes<input type="radio" name="CrashInWall" id="input13" value="No" style="margin:5px 5px 0px 110px">No
+				</div>
+				<div class="half2">
+					<input type="radio" name="CrashInSelf" id="input14" value="Yes" checked style="margin:5px 5px 0px 5px">Yes<input type="radio" name="CrashInSelf" id="input15" value="No" style="margin:5px 5px 0px 110px">No
+				</div>
+				<div class="half3">
+					<input type="color" name="input7" id="input7" value="#000000">
+				</div>
+				<div class="half3">
+					<input type="color" name="input8" id="input8" value="#FFFFFF">
+				</div>
+				<div class="half3">
+					<input type="color" name="input9" id="input9" value="#d3d3d3">
+				</div>
+				<div class="half3">
+					<input type="color" name="input11" id="input10" value="#008000">
+				</div>
+				<div class="half3">
+					<input type="color" name="input10" id="input11" value="#FF0000">
+				</div>
+				<button id="button6">Save</button>
+			</div>
+		</div>
+	</div>
+	<div id="overlay4">
+		<h1 id="h4">&nbsp;</h1>
+		<button id="button4">Settings</button>
+		<button id="button3">Yes</button>
+	</div>
+	<div id="body1">
+		<div class="header1">
+			<p class="player1"></p>
+			<p id="score1"></p>
+		</div>
+		<div id ="middle">
+			<canvas width="575" height="575" id="game"></canvas>
+		</div>
+		<div class="header1">
+			<div class="half1">
+				<p class="player1" style="margin-top:10px;"></p>
+				<p id="highscore1"></p>
+			</div>
+		</div>
+	</div>
+	
+	<script src="Snake.js"></script>
+</body>
+</html>
